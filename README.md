@@ -1,3 +1,3 @@
-# dotfiles
+# Description
 
 Unix configurations.
