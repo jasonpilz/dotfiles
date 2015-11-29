@@ -16,6 +16,7 @@ execute pathogen#infect()
 " Plugin 'L9' " Example of loading a plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'gmarik/Vundle.vim'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'https://github.com/scrooloose/nerdcommenter.git'
 Plugin 'https://github.com/ervandew/supertab.git'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'https://github.com/Shougo/unite.vim.git'
