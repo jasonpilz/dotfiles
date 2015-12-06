@@ -1,4 +1,9 @@
 " Vundle (needs to be before everything else)
+"
+" Setup Vundle -> git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" Run :PluginInstall
+" Setup Powerline fonts -> git clone https://github.com/powerline/fonts.git
+"
 " see :h vundle for more details or wiki for FAQ
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -9,9 +14,6 @@ set nocompatible                  " don't try to be compatible with legacy vi
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
 call vundle#begin()
-
-" if using Pathogen for plugins
-execute pathogen#infect()
 
 " Plugin 'L9' " Example of loading a plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'gmarik/Vundle.vim'
@@ -177,7 +179,7 @@ cnoremap <C-d> <Right><C-h>
 if has("gui_running")
   let s:uname = system("uname")
   if s:uname == "Darwin\n"
-    set guifont=Inconsolata\ for\ Powerline:h15
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
   endif
 endif
 
