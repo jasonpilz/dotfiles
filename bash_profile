@@ -10,13 +10,7 @@
 
 # ALIASES
   # path
-    alias     ..="cd .."
-    alias    ...="cd ../.."
-    alias   ....="cd ../../.."
-    alias  .....="cd ../../../.."
     alias ......="cd ../../../../.."
-    alias     rr="rake routes"
-    alias     aa="atom ."
 
     # NOTE: Delete this if you are using rvm
     # override cd b/c I always want to list dirs after I cd
