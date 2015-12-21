@@ -9,13 +9,6 @@ set --export CUCUMBER_FORMAT pretty
 
 # Set ENV variables
 
-# AWS
-set --export AWS_ACCESS_KEY_ID AKIAJ7VWVX6Z34BRSVEA
-set --export AWS_SECRET_ACCESS_KEY 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
-# Sparkfun data stream - 80022 Temp
-set --export SF_TEMP_PUBLIC_KEY lz569A9rojuOY5ERb9Lj
-set --export SF_TEMP_PRIVATE_KEY Elwp8q8anXCer2nalJ4x
-
 # Custom kill and foreground commands since I work with a lot of background jobs
 for i in (seq 30)
   eval "function $i
@@ -37,16 +30,13 @@ if test -e ~/.config/fish/private_config.fish
 end
 
 # Have `tree` colour directories yellowish
-# this shit is so badly documented and inconsistent
 set --export LS_COLORS 'di=36'
 
 # To enable the Postgres.app command line tools...
 set PATH /Applications/Postgres.app/Contents/Versions/9.4/bin $PATH
 
 # Alias
-
 alias aa="atom ."
-alias DO="ssh root@104.236.102.65"
 alias gg="git log --oneline --abbrev-commit --all --graph --decorate --color"
 alias gcm="git commit -m"
 alias ll="ls -lah"
