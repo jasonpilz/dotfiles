@@ -43,6 +43,8 @@ Plugin 'https://github.com/fatih/vim-go.git'
 Plugin 'https://github.com/wting/rust.vim'
 Plugin 'https://github.com/tpope/vim-rails.git'
 Plugin 'airblade/vim-gitgutter'
+" Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -53,7 +55,7 @@ set encoding=utf-8
 set laststatus=2                  " Always show the statusline
 
 let g:airline_enable_branch=1
-let g:airline_enable_syntastic=1
+" let g:airline_enable_syntastic=1
 let g:airline_powerline_fonts=1   " automatic population of g:airline_symbols dictionary with powerline symbols.
 let g:airline_detect_modified=1   " marks when the file has changed
 let g:airline_detect_paste=1      " enable paste detection (set paste) ie I'm not typing, I'm pasting
@@ -83,6 +85,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "" Autostart the NERDTree
 autocmd vimenter * NERDTree
 
+" Bind ',ne' to toggle NERDTree
+let mapleader = ","
+nmap <leader>ne :NERDTreeToggle<cr>
+
 "" The silver searcher
 if executable('ag')
   " Use ag over grep
@@ -103,10 +109,12 @@ command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 " Bind '\' to grep shortcut
 nnoremap \ :Ag<SPACE>
 
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
 "" Basic editor behaviour
 filetype plugin indent on       " load file type plugins + indentation
 set t_Co=256                    " Explicitly tell vim that the terminal supports 256 colors
-syntax enable                   " highlighting and shit
+syntax enable                   " highlighting
 set cursorline                  " colours the line the cursor is on
 set scrolloff=4                 " adds top/bottom buffer between cursor and window
 set number                      " line numbers
@@ -145,10 +153,14 @@ function! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfunction
 
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()  " strip trailing whitespace on save
-set nowrap                                                   " don't wrap lines
-set tabstop=2 shiftwidth=2                                   " a tab is two spaces (or set this to 4)
-set expandtab                                                " use spaces, not tabs (optional)
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()      " strip trailing whitespace on save
+set nowrap                                                       " don't wrap lines
+set tabstop=2 shiftwidth=2                                       " default tab is two spaces
+set expandtab                                                    " use spaces, not tabs (optional)
+autocmd Filetype html setlocal ts=2 sw=2 expandtab               " for html, 2 spaces
+autocmd Filetype ruby setlocal ts=2 sw=2 expandtab               " for ruby, 2 spaces
+autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 expandtab   " for javascript, 4 spaces
+
 set backspace=indent,eol,start                               " backspace through everything in insert mode
 
 "" Searching

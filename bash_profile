@@ -1,7 +1,7 @@
-# This file goes in ~/.bash_profile (the tilde is your home directory)
+  # This file goes in ~/.bash_profile (the tilde is your home directory)
 
 # Environment Variables
-  export EDITOR='atom'                                                  # Set to your text editor
+  export EDITOR='atom'                          # Set to your text editor
   export PATH="/usr/local/bin:$HOME/bin:$HOME/code/dotfiles/bin:$PATH"  # Look for executables in homebrew first
 
 # Load chruby
@@ -10,7 +10,13 @@
 
 # ALIASES
   # path
+    alias     ..="cd .."
+    alias    ...="cd ../.."
+    alias   ....="cd ../../.."
+    alias  .....="cd ../../../.."
     alias ......="cd ../../../../.."
+    alias     rr="rake routes"
+    alias     aa="atom ."
 
     # NOTE: Delete this if you are using rvm
     # override cd b/c I always want to list dirs after I cd
@@ -88,6 +94,11 @@
       cd "$(dirname $(gem which $1))"
     }
 
+
+  function jcurl() {
+      curl "$1" | json_pp | pygmentize -l json
+  }
+  export -f jcurl
 
 # PROMPT
   function parse_git_branch {
