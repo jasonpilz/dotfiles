@@ -33,12 +33,12 @@ function fish_prompt
 
 end
 
-function fish_right_prompt
-  # the user
-  set_color 1E90FF
-  echo "$USER "
+# function fish_right_prompt
+#   # the user
+#   set_color 1E90FF
+#   echo "$USER "
 
-  # the date
-  set_color blue
-  date "+%m/%d/%y"
-end
+#   # the date
+#   set_color blue
+#   date "+%m/%d/%y"
+# end
