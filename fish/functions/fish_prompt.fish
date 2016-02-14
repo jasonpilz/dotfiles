@@ -3,12 +3,14 @@ function fish_prompt
 
   # the time
   set_color black --background green
+  # set_color white --background magenta
   echo -n (date +" %I:%M %p ")
   set_color --background normal
   echo -n ' '
 
   # the path
   set_color --background 1E90FF
+  # set_color white --background magenta
   echo -n " "(pwd | sed s:$HOME:~:)" "
   set_color --background normal
   echo -n ' '
@@ -16,6 +18,7 @@ function fish_prompt
   # the git shell
   if git branch ^&- >&-
     set_color green --background 1E90FF
+    # set_color green --background magenta
     echo -n (git branch --no-color ^ /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1 /')
     set_color --background normal
   end
