@@ -1,7 +1,7 @@
 " Vundle (needs to be before everything else)
 "
-" Setup Vundle -> git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" Run :PluginInstall
+" Setup Vundle          -> git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" Run                   -> :PluginInstall or vim +PluginInstall +qall
 " Setup Powerline fonts -> git clone https://github.com/powerline/fonts.git
 "
 " see :h vundle for more details or wiki for FAQ
@@ -43,6 +43,9 @@ Plugin 'https://github.com/fatih/vim-go.git'
 Plugin 'https://github.com/wting/rust.vim'
 Plugin 'https://github.com/tpope/vim-rails.git'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'mxw/vim-jsx'
+Plugin 'isRuslan/vim-es6'
+Plugin 'janko-m/vim-test'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -73,7 +76,10 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim     "ctrlP plugin"
+"ctrlP plugin - To install:
+" cd ~/.vim
+" git clone https://github.com/ctrlpvim/ctrlp.vim.git bundle/ctrlp.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 runtime macros/matchit.vim                   " vim-textobj-rubyblock
 
@@ -81,6 +87,17 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 "" Autostart the NERDTree
 autocmd vimenter * NERDTree
+
+" Bind ',ne' to toggle NERDTree
+let mapleader = ","
+nmap <leader>ne :NERDTreeToggle<cr>
+
+" janko-m/vim-test mappings
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 "" The silver searcher
 if executable('ag')
@@ -102,10 +119,12 @@ command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 " Bind '\' to grep shortcut
 nnoremap \ :Ag<SPACE>
 
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
 "" Basic editor behaviour
 filetype plugin indent on       " load file type plugins + indentation
 set t_Co=256                    " Explicitly tell vim that the terminal supports 256 colors
-syntax enable                   " highlighting and shit
+syntax enable                   " highlighting
 set cursorline                  " colours the line the cursor is on
 set scrolloff=4                 " adds top/bottom buffer between cursor and window
 set number                      " line numbers
@@ -144,10 +163,14 @@ function! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfunction
 
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()  " strip trailing whitespace on save
-set nowrap                                                   " don't wrap lines
-set tabstop=2 shiftwidth=2                                   " a tab is two spaces (or set this to 4)
-set expandtab                                                " use spaces, not tabs (optional)
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()      " strip trailing whitespace on save
+set nowrap                                                       " don't wrap lines
+set tabstop=2 shiftwidth=2                                       " default tab is two spaces
+set expandtab                                                    " use spaces, not tabs (optional)
+autocmd Filetype html setlocal ts=2 sw=2 expandtab               " for html, 2 spaces
+autocmd Filetype ruby setlocal ts=2 sw=2 expandtab               " for ruby, 2 spaces
+autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 expandtab   " for javascript, 4 spaces
+
 set backspace=indent,eol,start                               " backspace through everything in insert mode
 
 "" Searching
@@ -203,27 +226,6 @@ if has("gui_running")
 endif
 
 "" filetypes
-au  BufRead,BufNewFile *.elm setfiletype haskell
-au  BufRead,BufNewFile *.sublime-* setfiletype javascript " .sublime-{settings,keymap,menu,commands}
-au  BufRead,BufNewFile *.sublime-snippet setfiletype html
-
-"" Maybe worth checking out
-" Profiling plugins
-"   https://github.com/bling/minivimrc/blob/43d099cc351424c345da0224da83c73b75bce931/vimrc#L30
-" Unite.vim
-"   https://github.com/Shougo/unite.vim
-" Vim airline integrations
-"   https://github.com/bling/vim-airline
-"   vim-bufferline, fugitive, unite, ctrlp, minibufexpl, gundo, undotree, nerdtree, tagbar, vim-gitgutter, vim-signify, syntastic, eclim, lawrencium, virtualenv, tmuxline.
-" marks
-"   http://vim.wikia.com/wiki/Using_marks
-" vim tree indentation
-"   http://vim.wikia.com/wiki/Using_Vim_as_an_outline_processor
-"   http://www.vim.org/scripts/script.php?script_id=1266
-"   http://vim.wikia.com/wiki/Indenting_source_code
-"   http://vim.wikia.com/wiki/Folding_for_plain_text_files_based_on_indentation
-"   http://superuser.com/questions/131950/indentation-for-plain-text-bulleted-lists-in-vim
-"   http://lucasoman.blogspot.com/2010/12/list-file-plugin-for-vim.html
-"   http://www.vim.org/scripts/script.php?script_id=3368
-"   https://github.com/vim-scripts/tree/blob/master/doc/tree.txt
-"   http://vim.wikia.com/wiki/Folding_for_plain_text_files_based_on_indentationsyntax on
+au BufRead,BufNewFile *.elm setfiletype haskell
+au BufRead,BufNewFile *.sublime-* setfiletype javascript " .sublime-{settings,keymap,menu,commands}
+au BufRead,BufNewFile *.sublime-snippet setfiletype html
