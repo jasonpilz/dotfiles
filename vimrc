@@ -53,7 +53,6 @@ set encoding=utf-8
 set laststatus=2                  " Always show the statusline
 
 let g:airline_enable_branch=1
-let g:airline_enable_syntastic=1
 let g:airline_powerline_fonts=1   " automatic population of g:airline_symbols dictionary with powerline symbols.
 let g:airline_detect_modified=1   " marks when the file has changed
 let g:airline_detect_paste=1      " enable paste detection (set paste) ie I'm not typing, I'm pasting
@@ -204,7 +203,7 @@ if has("gui_running")
 endif
 
 "" filetypes
-au BufRead,BufNewFile *.elm setfiletype haskell
+au  BufRead,BufNewFile *.elm setfiletype haskell
 au  BufRead,BufNewFile *.sublime-* setfiletype javascript " .sublime-{settings,keymap,menu,commands}
 au  BufRead,BufNewFile *.sublime-snippet setfiletype html
 

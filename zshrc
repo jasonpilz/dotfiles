@@ -2,7 +2,13 @@
 export ZSH=/Users/Jason/.oh-my-zsh
 
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="powerline"
+# ZSH_THEME="powerline"
+ZSH_THEME="agnoster"
+# ZSH_THEME="robbyrussell"
+
+# Hide $USER@$HOSTNAME prefix unless in ssh session
+# export DEFAULT_USER="Jason"
+[[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="Jason"
 
 # Configure powerline
 POWERLINE_RIGHT_A="exit-status"
