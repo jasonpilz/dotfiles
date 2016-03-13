@@ -46,6 +46,10 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
 Plugin 'janko-m/vim-test'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'Auto-Pairs'
+Plugin 'https://github.com/digitaltoad/vim-pug.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -55,6 +59,7 @@ set encoding=utf-8
 "" Configure Plugins
 set laststatus=2                  " Always show the statusline
 
+" Configure Airline
 let g:airline_enable_branch=1
 let g:airline_powerline_fonts=1   " automatic population of g:airline_symbols dictionary with powerline symbols.
 let g:airline_detect_modified=1   " marks when the file has changed
@@ -88,6 +93,18 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "" Autostart the NERDTree
 autocmd vimenter * NERDTree
 
+"" Easymotion
+" bind ',w' for easymotion move to word
+let mapleader = ","
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+" bind ',L' for easymotion move to line
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+
 " Bind ',ne' to toggle NERDTree
 let mapleader = ","
 nmap <leader>ne :NERDTreeToggle<cr>
@@ -119,13 +136,13 @@ command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 " Bind '\' to grep shortcut
 nnoremap \ :Ag<SPACE>
 
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+let g:jsx_ext_required = 0      " Allow JSX in normal JS files
 
 "" Basic editor behaviour
 filetype plugin indent on       " load file type plugins + indentation
 set t_Co=256                    " Explicitly tell vim that the terminal supports 256 colors
 syntax enable                   " highlighting
-set cursorline                  " colours the line the cursor is on
+" set cursorline                  " colours the line the cursor is on
 set scrolloff=4                 " adds top/bottom buffer between cursor and window
 set number                      " line numbers
 set showcmd                     " display incomplete commands
@@ -136,6 +153,24 @@ set splitright                  " open new split panes to right
 set ruler                       " not sure but sounds cool
 set smartindent                 " does the right thing (mostly)
 set autoindent                  " we will see
+
+" Load with ruler for 80 chars
+:set colorcolumn=80
+" :highlight ColorColumn ctermbg=160
+:highlight ColorColumn ctermbg=black
+
+" In Visual mode, customize the highlight background color
+:highlight Visual cterm=NONE ctermbg=red ctermfg=white
+
+" Line numbers
+:highlight LineNr ctermfg=grey
+:highlight LineNr ctermbg=black
+
+" Change cursor shape between insert and normal mode in iTerm2.app
+if $TERM_PROGRAM =~ "iTerm"
+   let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+   let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+endif
 
 " Relative or absolute line numbers
 function! NumberToggle()
@@ -169,9 +204,9 @@ set tabstop=2 shiftwidth=2                                       " default tab i
 set expandtab                                                    " use spaces, not tabs (optional)
 autocmd Filetype html setlocal ts=2 sw=2 expandtab               " for html, 2 spaces
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab               " for ruby, 2 spaces
-autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 expandtab   " for javascript, 4 spaces
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab   " for javascript, 2 spaces
 
-set backspace=indent,eol,start                               " backspace through everything in insert mode
+set backspace=indent,eol,start                                   " backspace through everything in insert mode
 
 "" Searching
 set hlsearch                    " highlight matches

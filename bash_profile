@@ -1,12 +1,12 @@
-  # This file goes in ~/.bash_profile (the tilde is your home directory)
+# This file goes in ~/.bash_profile (the tilde is your home directory)
 
 # Environment Variables
   export EDITOR='atom'                          # Set to your text editor
   export PATH="/usr/local/bin:$HOME/bin:$HOME/code/dotfiles/bin:$PATH"  # Look for executables in homebrew first
 
 # Load chruby
-  source "/usr/local/share/chruby/chruby.sh"
-  chruby 2.2.2 # Default
+  # source "/usr/local/share/chruby/chruby.sh"
+  # chruby 2.2.2 # Default
 
 # ALIASES
   # path
