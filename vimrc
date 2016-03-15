@@ -1,9 +1,9 @@
 " Vundle (needs to be before everything else)
-"
+
 " Setup Vundle          -> git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " Run                   -> :PluginInstall or vim +PluginInstall +qall
 " Setup Powerline fonts -> git clone https://github.com/powerline/fonts.git
-"
+
 " see :h vundle for more details or wiki for FAQ
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -46,6 +46,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
 Plugin 'janko-m/vim-test'
+Plugin 'git://github.com/digitaltoad/vim-pug.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -169,7 +170,7 @@ set tabstop=2 shiftwidth=2                                       " default tab i
 set expandtab                                                    " use spaces, not tabs (optional)
 autocmd Filetype html setlocal ts=2 sw=2 expandtab               " for html, 2 spaces
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab               " for ruby, 2 spaces
-autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 expandtab   " for javascript, 4 spaces
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab   " for javascript, 2 spaces
 
 set backspace=indent,eol,start                               " backspace through everything in insert mode
 
@@ -218,12 +219,44 @@ cnoremap <C-k> <C-f>d$<C-c><End>
 cnoremap <C-y> <C-r><C-o>"
 cnoremap <C-d> <Right><C-h>
 
+"" MacVim options
 if has("gui_running")
+
+  " Show ruler for 80 chars
+  :set colorcolumn=80
+
+  " Solarized theme config
+  set background=dark
+  let g:solarized_contrast = "high"
+  colorscheme solarized
+
+  " Load with cursor column enabled
+  :set cursorcolumn
+
   let s:uname = system("uname")
   if s:uname == "Darwin\n"
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
   endif
 endif
+
+" Toggle the cursor column highlighting
+function! CursorColumnToggle()
+  if &cursorcolumn
+    set nocursorcolumn
+  else
+    set cursorcolumn
+  endif
+endfunction
+
+" Bind ',cc' to toggle cursorcolumn
+let mapleader = ","
+nmap <leader>cc :call CursorColumnToggle()<cr>
+
+" Turn off the left / right scrollbars
+:set guioptions-=L
+:set guioptions-=R
+:set guioptions-=r
+:set guioptions-=l
 
 "" filetypes
 au BufRead,BufNewFile *.elm setfiletype haskell
