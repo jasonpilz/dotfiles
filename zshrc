@@ -17,6 +17,10 @@ ZSH_THEME="agnoster"
 POWERLINE_RIGHT_A="exit-status"
 POWERLINE_DETECT_SSH="true"
 
+# Config for NVM
+export NVM_DIR=~/.nvm
+. $(brew --prefix nvm)/nvm.sh
+
 # List folder contents after cd
 function chpwd() {
     ls -lah
