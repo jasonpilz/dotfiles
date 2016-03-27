@@ -21,9 +21,9 @@ POWERLINE_DETECT_SSH="true"
 export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
 
-# List folder contents after cd
-function chpwd() {
-    ls -lah
+# pretty print and colorize curl request
+function jcurl() {
+    curl "$1" | json | pygmentize -l json
 }
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -41,6 +41,11 @@ zle-line-init() {
     zle autosuggest-start
 }
 zle -N zle-line-init
+
+# List folder contents after cd
+function chpwd() {
+    ls -lah
+}
 
 # For a full list of active aliases, run `alias`.
 alias   zc="vim ~/.zshrc"
