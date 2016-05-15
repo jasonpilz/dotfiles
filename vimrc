@@ -51,6 +51,12 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'Auto-Pairs'
 Plugin 'https://github.com/digitaltoad/vim-pug.git'
 
+" Clojure syntax highlighting, syntax
+Plugin 'tpope/vim-fireplace'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
