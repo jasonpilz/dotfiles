@@ -31,6 +31,7 @@ plugins=(git rails ruby)
 
 # User configuration
 export PATH="/Users/Jason/.gem/ruby/2.2.2/bin:/Users/Jason/.rubies/ruby-2.2.2/lib/ruby/gems/2.2.0/bin:/Users/Jason/.rubies/ruby-2.2.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 source $ZSH/oh-my-zsh.sh
 
 # Load zsh-autosuggestions
@@ -48,6 +49,7 @@ function chpwd() {
 }
 
 # For a full list of active aliases, run `alias`.
+alias   PI="ssh pi@10.0.0.52"
 alias   zc="vim ~/.zshrc"
 alias   gs="git status"
 alias   ll="ls -lah"
