@@ -30,7 +30,7 @@ function jcurl() {
 plugins=(git rails ruby)
 
 # User configuration
-export PATH="/Users/Jason/.gem/ruby/2.2.2/bin:/Users/Jason/.rubies/ruby-2.2.2/lib/ruby/gems/2.2.0/bin:/Users/Jason/.rubies/ruby-2.2.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Users/Jason/.gem/ruby/2.2.2/bin:/Users/Jason/.rubies/ruby-2.2.2/lib/ruby/gems/2.2.0/bin:/Users/Jason/.rubies/ruby-2.2.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH:~/scripts"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -51,6 +51,7 @@ function chpwd() {
 # For a full list of active aliases, run `alias`.
 alias   PI="ssh pi@10.0.0.52"
 alias   zc="vim ~/.zshrc"
+alias   vc="vim ~/.vimrc"
 alias   gs="git status"
 alias   ll="ls -lah"
 alias   lon="particle function call sephiroth led on"
