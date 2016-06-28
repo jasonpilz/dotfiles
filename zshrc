@@ -23,14 +23,14 @@ export NVM_DIR=~/.nvm
 
 # pretty print and colorize curl request
 function jcurl() {
-    curl "$1" | json | pygmentize -l json
+    curl "$@" | json | pygmentize -l json
 }
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git rails ruby)
+plugins=(git rails ruby chucknorris)
 
 # User configuration
-export PATH="/Users/Jason/.gem/ruby/2.2.2/bin:/Users/Jason/.rubies/ruby-2.2.2/lib/ruby/gems/2.2.0/bin:/Users/Jason/.rubies/ruby-2.2.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH:~/scripts"
+export PATH="/Users/Jason/.gem/ruby/2.3.0/bin:/Users/Jason/.rubies/ruby-2.2.2/lib/ruby/gems/2.2.0/bin:/Users/Jason/.rubies/ruby-2.2.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH:~/scripts"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,13 +49,16 @@ function chpwd() {
 }
 
 # For a full list of active aliases, run `alias`.
-alias   PI="ssh pi@10.0.0.52"
+alias   ber="bundle exec rspec"
+alias   pb_ssh_me="ruby ~/scripts/ssh_me.rb | pbcopy"
 alias   zc="vim ~/.zshrc"
 alias   vc="vim ~/.vimrc"
 alias   gs="git status"
 alias   ll="ls -lah"
+alias   fs="foreman start"
 alias   lon="particle function call sephiroth led on"
 alias   loff="particle function call sephiroth led off"
 alias   voltage="particle variable get sephiroth voltage"
 
 COMPLETION_WAITING_DOTS="true"
+export PATH="/usr/local/sbin:$PATH"
