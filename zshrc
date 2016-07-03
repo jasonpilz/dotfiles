@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/Jason/.oh-my-zsh
+export ZSH=/Users/"$USER"/.oh-my-zsh
 
 # Load zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -11,7 +11,7 @@ ZSH_THEME="agnoster"
 # ZSH_THEME="robbyrussell"
 
 # Hide $USER@$HOSTNAME prefix unless in ssh session
-[[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="Jason"
+[[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER=$USER
 
 # Configure powerline
 POWERLINE_RIGHT_A="exit-status"
@@ -27,20 +27,14 @@ function jcurl() {
 }
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git rails ruby)
+plugins=(git rails ruby zsh-autosuggestions)
 
-# User configuration
-export PATH="/Users/Jason/.gem/ruby/2.2.2/bin:/Users/Jason/.rubies/ruby-2.2.2/lib/ruby/gems/2.2.0/bin:/Users/Jason/.rubies/ruby-2.2.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+#User configuration
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="/Users/"$USER"/.gem/ruby/2.2.2/bin:/Users/"$USER"/.rubies/ruby-2.2.2/lib/ruby/gems/2.2.0/bin:/Users/"$USER"/.rubies/ruby-2.2.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
-# Load zsh-autosuggestions
-source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
-
-# Enable autosuggestions automatically
-zle-line-init() {
-    zle autosuggest-start
-}
 zle -N zle-line-init
 
 # List folder contents after cd
@@ -48,13 +42,14 @@ function chpwd() {
     ls -lah
 }
 
+# Config for lunchy gem
+# LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+# if [ -f $LUNCHY_DIR/lunchy-completion.zsh  ]; then
+#   . $LUNCHY_DIR/lunchy-completion.zsh
+# fi
+
+# aliases
 # For a full list of active aliases, run `alias`.
-alias   PI="ssh pi@10.0.0.52"
-alias   zc="vim ~/.zshrc"
-alias   gs="git status"
-alias   ll="ls -lah"
-alias   lon="particle function call sephiroth led on"
-alias   loff="particle function call sephiroth led off"
-alias   voltage="particle variable get sephiroth voltage"
+[[ -f ~/.aliases  ]] && source ~/.aliases
 
 COMPLETION_WAITING_DOTS="true"
