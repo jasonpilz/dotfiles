@@ -23,15 +23,15 @@ export NVM_DIR=~/.nvm
 
 # pretty print and colorize curl request
 function jcurl() {
-    curl "$1" | json | pygmentize -l json
+    curl "$@" | json | pygmentize -l json
 }
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git rails ruby zsh-autosuggestions)
+plugins=(git rails ruby chucknorris zsh-autosuggestions)
 
 #User configuration
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="/Users/"$USER"/.gem/ruby/2.2.2/bin:/Users/"$USER"/.rubies/ruby-2.2.2/lib/ruby/gems/2.2.0/bin:/Users/"$USER"/.rubies/ruby-2.2.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Users/"$USER"/.gem/ruby/2.3.0/bin:/Users/"$USER"/.rubies/ruby-2.2.2/lib/ruby/gems/2.2.0/bin:/Users/"$USER"/.rubies/ruby-2.2.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,3 +53,4 @@ function chpwd() {
 [[ -f ~/.aliases  ]] && source ~/.aliases
 
 COMPLETION_WAITING_DOTS="true"
+export PATH="/usr/local/sbin:$PATH"

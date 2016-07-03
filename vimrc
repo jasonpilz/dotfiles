@@ -25,7 +25,6 @@ Plugin 'https://github.com/Shougo/unite.vim.git'
 Plugin 'https://github.com/kchmck/vim-coffee-script.git'
 Plugin 'https://github.com/tpope/vim-commentary.git'
 Plugin 'https://github.com/tpope/vim-cucumber.git'
-Plugin 'https://github.com/elixir-lang/vim-elixir.git'
 Plugin 'https://github.com/tpope/vim-endwise.git'
 Plugin 'https://github.com/dag/vim-fish.git'
 Plugin 'https://github.com/tpope/vim-fugitive.git'
@@ -56,6 +55,9 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
+
+" Elixir support
+Plugin 'elixir-lang/vim-elixir'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
