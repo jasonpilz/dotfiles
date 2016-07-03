@@ -1,0 +1,25 @@
+# Unix
+  alias     ll="ls -lah"
+  alias     ..="cd .."
+  alias    ...="cd ../.."
+  alias   ....="cd ../../.."
+  alias  .....="cd ../../../.."
+  alias ......="cd ../../../../.."
+  alias     zc="vim ~/.zshrc"
+  alias     vc="vim ~/.vimrc"
+  alias     aa="atom ."
+
+# Rails
+  alias rr="rake routes"
+
+# Rspec
+  alias ber="bundle exec rspec"
+
+# Git
+  alias  gs="git status"
+  alias gcm="git commit -m"
+
+# Particle
+  alias     lon="particle function call sephiroth led on"
+  alias    loff="particle function call sephiroth led off"
+  alias voltage="particle variable get sephiroth voltage"
