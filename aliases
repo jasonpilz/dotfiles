@@ -17,7 +17,7 @@
 
 # Git
   alias  gs="git status"
-  alias gcm="git commit -m"
+  alias gcs="git checkout staging"
 
 # Particle
   alias     lon="particle function call sephiroth led on"
