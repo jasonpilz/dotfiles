@@ -42,15 +42,16 @@ function chpwd() {
     ls -lah
 }
 
+
+# aliases
+# For a full list of active aliases, run `alias`.
+[[ -f ~/.aliases  ]] && source ~/.aliases
+
 # Config for lunchy gem
 # LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
 # if [ -f $LUNCHY_DIR/lunchy-completion.zsh  ]; then
 #   . $LUNCHY_DIR/lunchy-completion.zsh
 # fi
-
-# aliases
-# For a full list of active aliases, run `alias`.
-[[ -f ~/.aliases  ]] && source ~/.aliases
 
 COMPLETION_WAITING_DOTS="true"
 export PATH="/usr/local/sbin:$PATH"
