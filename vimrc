@@ -1,9 +1,9 @@
 " Vundle (needs to be before everything else)
-"
+
 " Setup Vundle          -> git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " Run                   -> :PluginInstall or vim +PluginInstall +qall
 " Setup Powerline fonts -> git clone https://github.com/powerline/fonts.git
-"
+
 " see :h vundle for more details or wiki for FAQ
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -25,7 +25,6 @@ Plugin 'https://github.com/Shougo/unite.vim.git'
 Plugin 'https://github.com/kchmck/vim-coffee-script.git'
 Plugin 'https://github.com/tpope/vim-commentary.git'
 Plugin 'https://github.com/tpope/vim-cucumber.git'
-Plugin 'https://github.com/elixir-lang/vim-elixir.git'
 Plugin 'https://github.com/tpope/vim-endwise.git'
 Plugin 'https://github.com/dag/vim-fish.git'
 Plugin 'https://github.com/tpope/vim-fugitive.git'
@@ -50,6 +49,15 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'Auto-Pairs'
 Plugin 'https://github.com/digitaltoad/vim-pug.git'
+
+" Clojure syntax highlighting, syntax
+Plugin 'tpope/vim-fireplace'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
+
+" Elixir support
+Plugin 'elixir-lang/vim-elixir'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -220,8 +228,8 @@ set updatecount=0                        " Don't try to write swapfiles after so
 set backupskip=/tmp/*,/private/tmp/*"    " can edit crontab files
 
 "" Convenience
-nmap <Leader>p orequire "pry"<CR>binding.pry<ESC>;        " pry insertion
-vnoremap . :norm.<CR>;                                    " in visual mode, "." will for each line, go into normal mode and execute the "."
+nmap <Leader>p orequire "pry"<CR>binding.pry<ESC>;
+vnoremap . :norm.<CR>;
 nnoremap <Leader>v :set paste<CR>"*p<CR>:set nopaste<CR>; " paste without being stupid ("*p means to paste on next line (p) from the register (") that represents the clipboard (*))
 
 " replaces %/ with current directory, and %% with current file
@@ -253,12 +261,44 @@ cnoremap <C-k> <C-f>d$<C-c><End>
 cnoremap <C-y> <C-r><C-o>"
 cnoremap <C-d> <Right><C-h>
 
+"" MacVim options
 if has("gui_running")
+
+  " Show ruler for 80 chars
+  :set colorcolumn=80
+
+  " Solarized theme config
+  set background=dark
+  let g:solarized_contrast = "high"
+  colorscheme solarized
+
+  " Load with cursor column enabled
+  :set cursorcolumn
+
   let s:uname = system("uname")
   if s:uname == "Darwin\n"
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
   endif
 endif
+
+" Toggle the cursor column highlighting
+function! CursorColumnToggle()
+  if &cursorcolumn
+    set nocursorcolumn
+  else
+    set cursorcolumn
+  endif
+endfunction
+
+" Bind ',cc' to toggle cursorcolumn
+let mapleader = ","
+nmap <leader>cc :call CursorColumnToggle()<cr>
+
+" Turn off the left / right scrollbars
+:set guioptions-=L
+:set guioptions-=R
+:set guioptions-=r
+:set guioptions-=l
 
 "" filetypes
 au BufRead,BufNewFile *.elm setfiletype haskell

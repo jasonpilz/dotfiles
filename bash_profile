@@ -8,16 +8,6 @@
   # source "/usr/local/share/chruby/chruby.sh"
   # chruby 2.2.2 # Default
 
-# ALIASES
-  # path
-    alias     ..="cd .."
-    alias    ...="cd ../.."
-    alias   ....="cd ../../.."
-    alias  .....="cd ../../../.."
-    alias ......="cd ../../../../.."
-    alias     rr="rake routes"
-    alias     aa="atom ."
-
     # NOTE: Delete this if you are using rvm
     # override cd b/c I always want to list dirs after I cd
     # note that this won't work with rvm b/c it overrides cd.
