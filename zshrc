@@ -35,13 +35,15 @@ export PATH="/Users/"$USER"/.gem/ruby/2.3.0/bin:/Users/"$USER"/.rubies/ruby-2.2.
 
 source $ZSH/oh-my-zsh.sh
 
+# Load z
+. `brew --prefix`/etc/profile.d/z.sh
+
 zle -N zle-line-init
 
 # List folder contents after cd
 function chpwd() {
     ls -lah
 }
-
 
 # aliases
 # For a full list of active aliases, run `alias`.
