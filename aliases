@@ -10,6 +10,7 @@
   alias     zc="vim ~/.zshrc"
   alias     vc="vim ~/.vimrc"
   alias     aa="atom ."
+  alias   myip="~/scripts/ssh_me.sh"
 
 # Rails
   alias   rr="rake routes"
