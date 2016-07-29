@@ -27,7 +27,6 @@ Plugin 'https://github.com/tpope/vim-commentary.git'
 Plugin 'https://github.com/tpope/vim-cucumber.git'
 Plugin 'https://github.com/tpope/vim-endwise.git'
 Plugin 'https://github.com/dag/vim-fish.git'
-Plugin 'https://github.com/tpope/vim-fugitive.git'
 Plugin 'https://github.com/tpope/vim-haml.git'
 Plugin 'https://github.com/pangloss/vim-javascript.git'
 Plugin 'https://github.com/tpope/vim-markdown.git'
@@ -49,6 +48,11 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'Auto-Pairs'
 Plugin 'https://github.com/digitaltoad/vim-pug.git'
+
+" Plugins that help with ctags integration
+Plugin 'https://github.com/tpope/vim-fugitive.git'
+Plugin 'https://github.com/tpope/vim-bundler.git'
+
 
 " Clojure syntax highlighting, syntax
 Plugin 'tpope/vim-fireplace'
@@ -150,7 +154,8 @@ let g:jsx_ext_required = 0      " Allow JSX in normal JS files
 filetype plugin indent on       " load file type plugins + indentation
 set t_Co=256                    " Explicitly tell vim that the terminal supports 256 colors
 syntax enable                   " highlighting
-" set cursorline                  " colours the line the cursor is on
+set cursorcolumn                " colours the column the cursor is on
+set cursorline                  " colours the line the cursor is on
 set scrolloff=4                 " adds top/bottom buffer between cursor and window
 set number                      " line numbers
 set showcmd                     " display incomplete commands
@@ -164,11 +169,14 @@ set autoindent                  " we will see
 
 " Load with ruler for 80 chars
 :set colorcolumn=80
-" :highlight ColorColumn ctermbg=160
-:highlight ColorColumn ctermbg=black
+" :highlight colorcolumn ctermbg=160
+:highlight colorcolumn ctermbg=black
+
+:highlight cursorcolumn ctermbg=black
+:highlight cursorline cterm=NONE ctermbg=black
 
 " In Visual mode, customize the highlight background color
-:highlight Visual cterm=NONE ctermbg=red ctermfg=white
+:highlight Visual cterm=NONE ctermbg=016
 
 " Line numbers
 :highlight LineNr ctermfg=grey
