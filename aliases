@@ -18,8 +18,12 @@
   alias   rs="rails server"
   alias yolo="rake db:drop db:create db:migrate db:seed"
 
+# Gems
+  alias fs="foreman start"
+
 # Rspec
-  alias ber="bundle exec rspec"
+  alias  ber="bundle exec rspec"
+  alias berr="bundle exec rspec && rubocop"
 
 # Git
   alias  gs="git status"
