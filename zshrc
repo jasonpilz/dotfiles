@@ -31,7 +31,7 @@ plugins=(git rails ruby chucknorris zsh-autosuggestions)
 
 #User configuration
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="/Users/"$USER"/.gem/ruby/2.3.0/bin:/Users/"$USER"/.rubies/ruby-2.2.2/lib/ruby/gems/2.2.0/bin:/Users/"$USER"/.rubies/ruby-2.2.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Users/"$USER"/.gem/ruby/2.3.0/bin:/Users/"$USER"/.rubies/ruby-2.3.0/lib/ruby/gems/2.3.0/bin:/Users/"$USER"/.rubies/ruby-2.3.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -57,3 +57,6 @@ function chpwd() {
 
 COMPLETION_WAITING_DOTS="true"
 export PATH="/usr/local/sbin:$PATH"
+
+# iTerm2 Shell integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
