@@ -116,6 +116,10 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 map <Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader>L <Plug>(easymotion-overwin-line)
 
+" bind ',p' for clean pasting from clipboard
+" let mapleader = ","
+" nmap <leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+
 
 " Bind ',ne' to toggle NERDTree
 let mapleader = ","
@@ -181,6 +185,10 @@ set autoindent                  " we will see
 " Line numbers
 :highlight LineNr ctermfg=grey
 :highlight LineNr ctermbg=black
+
+" CSV column highlighting
+hi CSVColumnEven ctermbg=053
+hi CSVColumnOdd ctermbg=018
 
 " Change cursor shape between insert and normal mode in iTerm2.app
 if $TERM_PROGRAM =~ "iTerm"
