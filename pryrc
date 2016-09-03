@@ -1,8 +1,8 @@
-Pry.config.theme = 'solarized'
-Pry.config.editor = 'vim'
-
 require 'awesome_print'
 AwesomePrint.pry!
+
+Pry.config.theme = 'solarized'
+Pry.config.editor = 'vim'
 
 if defined?(PryByebug)
   Pry.commands.alias_command 'c', 'continue'
@@ -10,4 +10,3 @@ if defined?(PryByebug)
   Pry.commands.alias_command 'n', 'next'
   Pry.commands.alias_command 'f', 'finish'
 end
-
