@@ -45,15 +45,21 @@ function chpwd() {
     ls -lah
 }
 
+# Use openconnect to connect to the Sesac VPN
+# https://gist.github.com/moklett/3170636
+function sesacvpn() {
+    echo "$1" | \
+    sudo openconnect \
+         --user=jpilz \
+         --passwd-on-stdin \
+         --authgroup=EMP-Access \
+         --no-cert-check \
+         vpn.sesac.com
+}
+
 # aliases
 # For a full list of active aliases, run `alias`.
 [[ -f ~/.aliases  ]] && source ~/.aliases
-
-# Config for lunchy gem
-# LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-# if [ -f $LUNCHY_DIR/lunchy-completion.zsh  ]; then
-#   . $LUNCHY_DIR/lunchy-completion.zsh
-# fi
 
 COMPLETION_WAITING_DOTS="true"
 export PATH="/usr/local/sbin:$PATH"
