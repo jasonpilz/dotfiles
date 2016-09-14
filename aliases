@@ -27,6 +27,7 @@
   alias    berr="bundle exec rspec && rubocop"
 
 # Git
+  alias      co="git checkout"
   alias      gs="git status"
   alias     gcs="git checkout staging"
   alias     glg="git log --oneline --abbrev-commit --all --graph --decorate --color"
