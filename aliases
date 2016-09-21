@@ -30,6 +30,7 @@
   alias      co="git checkout"
   alias      gs="git status"
   alias     gcs="git checkout staging"
+  alias    gpom="git push origin master"
   alias     glg="git log --oneline --abbrev-commit --all --graph --decorate --color"
 
 # Particle
