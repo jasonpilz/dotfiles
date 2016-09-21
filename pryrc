@@ -1,6 +1,8 @@
 require 'awesome_print'
 require 'hashie'
 require 'prawn'
+require 'json'
+require 'csv'
 
 Pry.config.theme = 'solarized'
 Pry.config.editor = 'vim'
