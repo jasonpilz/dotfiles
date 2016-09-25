@@ -198,12 +198,11 @@ endif
 
 " Relative or absolute line numbers
 function! NumberToggle()
-  if(&nu == 1)
-    set nu!
-    set rnu
+  if(&relativenumber == 1)
+    set number
   else
-    set nornu
-    set nu
+    set number
+    set relativenumber
   endif
 endfunction
 
@@ -235,6 +234,8 @@ set backspace=indent,eol,start                                   " backspace thr
 "" Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
+set ignorecase                  " case insensitive pattern matching
+set smartcase                   " overrides ignorecase if pattern contains upcase
 nmap <leader>h :nohlsearch<cr>
 
 "" Vim, Imma edit the same file multiple times, okay? deal with it
