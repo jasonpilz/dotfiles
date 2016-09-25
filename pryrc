@@ -1,6 +1,7 @@
 require 'awesome_print'
 require 'hashie'
 require 'prawn'
+require 'faker'
 require 'json'
 require 'csv'
 
