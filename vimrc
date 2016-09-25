@@ -102,12 +102,13 @@ runtime macros/matchit.vim                   " vim-textobj-rubyblock
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " close vim if NERDTree is the only open buffer
 
+let mapleader = ","
+
 "" Autostart the NERDTree
 autocmd vimenter * NERDTree
 
 "" Easymotion
 " bind ',w' for easymotion move to word
-let mapleader = ","
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
@@ -117,12 +118,9 @@ map <Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader>L <Plug>(easymotion-overwin-line)
 
 " bind ',p' for clean pasting from clipboard
-" let mapleader = ","
 " nmap <leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
-
 " Bind ',ne' to toggle NERDTree
-let mapleader = ","
 nmap <leader>ne :NERDTreeToggle<cr>
 
 " janko-m/vim-test mappings
@@ -131,6 +129,8 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+" Autopairs
 
 "" The silver searcher
 if executable('ag')
@@ -235,6 +235,7 @@ set backspace=indent,eol,start                                   " backspace thr
 "" Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
+nmap <leader>h :nohlsearch<cr>
 
 "" Vim, Imma edit the same file multiple times, okay? deal with it
 set nobackup                             " no backup files
