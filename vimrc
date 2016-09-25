@@ -186,6 +186,9 @@ set autoindent                  " we will see
 :highlight LineNr ctermfg=grey
 :highlight LineNr ctermbg=black
 
+" Search hits
+hi Search cterm=NONE ctermfg=black ctermbg=200
+
 " CSV column highlighting
 hi CSVColumnEven ctermbg=053
 hi CSVColumnOdd ctermbg=018
