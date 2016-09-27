@@ -40,3 +40,7 @@
 
 # Sesac
   alias apiyolo="bundle exec rake db:drop db:create db:load db:seed && rm -rf solr/core/data"
+
+# Hub
+  alias      hb="hub browse"
+  alias     hbp="hub browse -- pulls"
