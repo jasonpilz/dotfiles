@@ -37,3 +37,6 @@
   alias     lon="particle function call sephiroth led on"
   alias    loff="particle function call sephiroth led off"
   alias voltage="particle variable get sephiroth voltage"
+
+# Sesac
+  alias apiyolo="bundle exec rake db:drop db:create db:load db:seed && rm -rf solr/core/data"
