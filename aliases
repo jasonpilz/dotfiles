@@ -44,3 +44,6 @@
 # Hub
   alias      hb="hub browse"
   alias     hbp="hub browse -- pulls"
+
+# Capistrano
+  alias     cpd="cap production deploy"
