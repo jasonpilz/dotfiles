@@ -44,6 +44,11 @@
 # Hub
   alias      hb="hub browse"
   alias     hbp="hub browse -- pulls"
+  alias     hbi="hub browse -- issues"
 
 # Capistrano
   alias     cpd="cap production deploy"
+  alias    cpps="cap production puma:stop"
+
+# Gist
+  alias   gists="gist -l"
