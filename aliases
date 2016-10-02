@@ -9,13 +9,14 @@
   alias      fc="vim ~/.config/fish/config.fish"
   alias      zc="vim ~/.zshrc"
   alias      vc="vim ~/.vimrc"
+  alias      ac="vim ~/.aliases"
   alias      aa="atom ."
   alias    myip="~/scripts/ssh_me.sh"
 
 # Rails
   alias      rr="rake routes"
-  alias      rc="rails console"
-  alias      rs="rails server"
+  alias      rc="bundle exec rails console"
+  alias      rs="bundle exec rails server"
   alias      rt="rake test"
   alias    yolo="rake db:drop db:create db:migrate db:seed"
 
