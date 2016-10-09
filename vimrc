@@ -48,6 +48,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'Auto-Pairs'
 Plugin 'https://github.com/digitaltoad/vim-pug.git'
+Plugin 'rizzatti/dash.vim'
 
 " Plugins that help with ctags integration
 Plugin 'https://github.com/tpope/vim-fugitive.git'
