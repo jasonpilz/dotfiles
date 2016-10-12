@@ -12,6 +12,7 @@
   alias      ac="vim ~/.aliases"
   alias      aa="atom ."
   alias    myip="~/scripts/ssh_me.sh"
+  alias   scaps="open ~/Pictures/ScreenCapture"
 
 # Rails
   alias      rr="rake routes"
