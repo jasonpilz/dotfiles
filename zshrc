@@ -66,3 +66,7 @@ export PATH="/usr/local/sbin:$PATH"
 
 # iTerm2 Shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# asdf version manager
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
