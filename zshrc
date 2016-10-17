@@ -27,7 +27,7 @@ function jcurl() {
 }
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git rails ruby chucknorris zsh-autosuggestions)
+plugins=(git rails ruby chucknorris zsh-autosuggestions docker)
 
 #User configuration
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
