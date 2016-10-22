@@ -45,23 +45,20 @@ Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
 Plugin 'janko-m/vim-test'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'junegunn/vim-easy-align'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'Auto-Pairs'
 Plugin 'https://github.com/digitaltoad/vim-pug.git'
 Plugin 'rizzatti/dash.vim'
 Plugin 'ekalinin/Dockerfile.vim'
-
 " Plugins that help with ctags integration
 Plugin 'https://github.com/tpope/vim-fugitive.git'
 Plugin 'https://github.com/tpope/vim-bundler.git'
-
-
 " Clojure syntax highlighting, syntax
 Plugin 'tpope/vim-fireplace'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
-
 " Elixir support
 Plugin 'elixir-lang/vim-elixir'
 
@@ -125,12 +122,18 @@ nmap <Leader>L <Plug>(easymotion-overwin-line)
 " Bind ',ne' to toggle NERDTree
 nmap <leader>ne :NERDTreeToggle<cr>
 
-" janko-m/vim-test mappings
+"" janko-m/vim-test mappings
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+"" EasyAlign
+" Start  interactive EasyAlign  in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " Autopairs
 
