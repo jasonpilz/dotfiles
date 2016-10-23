@@ -29,6 +29,7 @@
 
 # Gems
   alias      fs="foreman start"
+  alias      ra="rubocop -a"
 
 # Rspec
   alias     ber="bundle exec rspec"
@@ -36,8 +37,10 @@
 
 # Git
   alias      co="git checkout"
+  alias     com="git checkout master"
   alias      gs="git status"
   alias     gcs="git checkout staging"
+  alias   gcmsg="git commit -m"
   alias    gpom="git push origin master"
   alias     glg="git log --oneline --abbrev-commit --all --graph --decorate --color"
 
@@ -48,6 +51,9 @@
 
 # Sesac
   alias apiyolo="bundle exec rake db:drop db:create db:load db:seed && rm -rf solr/core/data"
+
+# MM4
+  alias  killmm="for server in $(cat config/production_ip_addresses); do ssh "ubuntu@$server" "pkill --signal 9 -f ruby"; echo $server; done"
 
 # Hub
   alias      hb="hub browse"
