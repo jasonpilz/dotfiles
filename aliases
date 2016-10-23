@@ -53,7 +53,7 @@
   alias apiyolo="bundle exec rake db:drop db:create db:load db:seed && rm -rf solr/core/data"
 
 # MM4
-  alias  killmm="for server in $(cat config/production_ip_addresses); do ssh "ubuntu@$server" "pkill --signal 9 -f ruby"; echo $server; done"
+  alias  killmm="for server in $(cat config/production_ip_addresses); do ssh 'ubuntu@$server' 'pkill --signal 9 -f ruby'; echo $server; done"
 
 # Hub
   alias      hb="hub browse"
