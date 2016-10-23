@@ -21,6 +21,12 @@
   alias      rt="rake test"
   alias    yolo="rake db:drop db:create db:migrate db:seed"
 
+# Mix
+  alias      mt="mix test"
+  alias    iexi="iex -S mix"
+  alias      md="mix deps"
+  alias     mdg="mix deps.get"
+
 # Gems
   alias      fs="foreman start"
 
