@@ -44,6 +44,9 @@
   alias    gpom="git push origin master"
   alias     glg="git log --oneline --abbrev-commit --all --graph --decorate --color"
 
+# MySQL
+  alias     mys="mysql.server start"
+
 # Particle
   alias     lon="particle function call sephiroth led on"
   alias    loff="particle function call sephiroth led off"
@@ -53,7 +56,7 @@
   alias apiyolo="bundle exec rake db:drop db:create db:load db:seed && rm -rf solr/core/data"
 
 # MM4
-  alias  killmm="for server in $(cat config/production_ip_addresses); do ssh 'ubuntu@$server' 'pkill --signal 9 -f ruby'; echo $server; done"
+  # alias  killmm="for server in $(cat config/production_ip_addresses); do ssh 'ubuntu@$server' 'pkill --signal 9 -f ruby'; echo $server; done"
 
 # Hub
   alias      hb="hub browse"
@@ -66,3 +69,8 @@
 
 # Gist
   alias   gists="gist -l"
+
+# RabbitMQ
+  alias     rlq="rabbitmqadmin list queues"
+  alias    rdqn="rabbitmqadmin delete queue name="
+  alias    rabs="rabbitmq-server"
