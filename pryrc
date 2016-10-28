@@ -25,9 +25,9 @@ end
 class Hash
   def self.toy
     {
-      1 => 2,
-      'a' => 'b',
-      'foo' => 'bar',
+      1      => 2,
+      'a'    => 'b',
+      'foo'  => 'bar',
       :hello => 'world'
     }
   end
