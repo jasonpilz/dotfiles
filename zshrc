@@ -44,32 +44,32 @@ export NVM_DIR=~/.nvm
 
 # <=============================== PATH ====================================> #
 
-# INHERITED from somewhere...dunno
-# path=(
-#   $path
-#   /Users/Jason/.rvm/gems/ruby-2.3.1/bin
-#   /Users/Jason/.rvm/gems/ruby-2.3.1@global/bin
-#   /Users/Jason/.rvm/rubies/ruby-2.3.1/bin
-#   /Users/Jason/.asdf/bin
-#   /Users/Jason/.asdf/shims
-#   /Users/Jason/.nvm/versions/node/v5.4.1/bin
-#   /usr/local/bin
-#   /usr/local/sbin
-#   /usr/bin
-#   /bin
-#   /usr/sbin
-#   /sbin
-#   /usr/local/MacGPG2/bin
-#   /Users/Jason/.rvm/bin
-# )
-
 path=(
   $path
+  /Users/Jason/.rvm/gems/ruby-2.3.1/bin
+  /Users/Jason/.rvm/gems/ruby-2.3.1@global/bin
+  /Users/Jason/.rvm/rubies/ruby-2.3.1/bin
+  /Users/Jason/.asdf/bin
+  /Users/Jason/.asdf/shims
+  /Users/Jason/.nvm/versions/node/v5.4.1/bin
+  /usr/local/bin
+  /usr/local/sbin
+  /usr/bin
+  /bin
+  /usr/sbin
+  /sbin
+  /usr/local/MacGPG2/bin
+  /Users/Jason/.rvm/bin
   /Users/"$USER"/.mix/escripts
-  # /Users/"$USER"/.gem/ruby/2.3.0/bin
-  # /Users/"$USER"/.rubies/ruby-2.3.0/lib/ruby/gems/2.3.0/bin
-  # /Users/"$USER"/.rubies/ruby-2.3.0/bin
 )
+
+# path=(
+#   $path
+#   /Users/"$USER"/.mix/escripts
+#   # /Users/"$USER"/.gem/ruby/2.3.0/bin
+#   # /Users/"$USER"/.rubies/ruby-2.3.0/lib/ruby/gems/2.3.0/bin
+#   # /Users/"$USER"/.rubies/ruby-2.3.0/bin
+# )
 export PATH
 
 # <============================ Functions ==================================> #
