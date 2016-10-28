@@ -1,3 +1,5 @@
+// vim: ft=ruby:
+
 require 'awesome_print'
 require 'hashie'
 require 'prawn'

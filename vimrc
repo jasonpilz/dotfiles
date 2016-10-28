@@ -11,6 +11,7 @@
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 
 set nocompatible                  " don't try to be compatible with legacy vi
+set modelines=5
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
 call vundle#begin()
@@ -328,5 +329,5 @@ nmap <leader>cc :call CursorColumnToggle()<cr>
 
 "" filetypes
 au BufRead,BufNewFile *.elm setfiletype haskell
-au BufRead,BufNewFile *.sublime-* setfiletype javascript " .sublime-{settings,keymap,menu,commands}
-au BufRead,BufNewFile *.sublime-snippet setfiletype html
+au BufRead,BufNewFile *.dump setfiletype sql
+au BufRead,BufNewFile *.conf setfiletype conf
