@@ -96,5 +96,14 @@ function sesacvpn() {
          vpn.sesac.com
 }
 
+function hfavpn() {
+    echo "$1" | \
+    sudo openconnect \
+         --user=jpilz \
+         --passwd-on-stdin \
+         --no-cert-check \
+         vpn.harryfox.com
+}
+
 # ALIASES For a full list of active aliases, run `alias`
 [[ -f ~/.aliases  ]] && source ~/.aliases
