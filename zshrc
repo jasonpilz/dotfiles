@@ -101,6 +101,7 @@ function hfavpn() {
     sudo openconnect \
          --user=jpilz \
          --passwd-on-stdin \
+         --authgroup=HFAVPN \
          --no-cert-check \
          vpn.harryfox.com
 }
