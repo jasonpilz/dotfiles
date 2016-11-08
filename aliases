@@ -75,6 +75,9 @@
   alias    rdqn="rabbitmqadmin delete queue name="
   alias    rabs="rabbitmq-server"
 
+# Kafka
+  alias kafka-server="zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties; kafka-server-start /usr/local/etc/kafka/server.properties"
+
 # Docker
   alias      dp="docker ps"
   alias     dpa="docker ps -a"

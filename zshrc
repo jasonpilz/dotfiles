@@ -108,3 +108,6 @@ function hfavpn() {
 
 # ALIASES For a full list of active aliases, run `alias`
 [[ -f ~/.aliases  ]] && source ~/.aliases
+
+# for HFA cloudsearch script
+export AWS_REGION=us-east-1
