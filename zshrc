@@ -61,6 +61,7 @@ path=(
   /usr/local/MacGPG2/bin
   /Users/Jason/.rvm/bin
   /Users/"$USER"/.mix/escripts
+  /Users/"$USER"/scripts
 )
 
 # path=(
