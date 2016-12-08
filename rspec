@@ -1,3 +1,4 @@
 --color
 -f d
 --order random
+--require pry
