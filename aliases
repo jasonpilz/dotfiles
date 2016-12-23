@@ -19,7 +19,7 @@
   alias      rc="bundle exec rails console"
   alias      rs="bundle exec rails server"
   alias      rt="rake test"
-  alias    yolo="rake db:drop db:create db:migrate db:seed"
+  alias    yolo="rails db:drop db:create db:migrate db:seed"
 
 # Mix
   alias      mt="mix test"
@@ -30,6 +30,7 @@
 # Gems
   alias      fs="foreman start"
   alias      ra="rubocop -a"
+  alias     rrr='rspec && rubocop && reek'
 
 # Rspec
   alias     ber="bundle exec rspec"
@@ -53,8 +54,10 @@
   alias voltage="particle variable get sephiroth voltage"
 
 # Sesac
-  alias apiyolo="bundle exec rake db:drop db:create db:load db:seed && rm -rf solr/core/data"
-  alias solrdev="open http://10.24.51.59:8983/solr/\#/"
+  alias  apiyolo="bundle exec rake db:drop db:create db:load db:seed"
+  alias  solrdev="open http://10.30.3.5:8983/solr/\#/"
+  alias   solrqa="open http://10.24.51.59:8983/solr/\#/"
+  alias solrprod="open http://10.24.22.83:8983/solr/\#/"
 
 # MM4
   # alias  killmm="for server in $(cat config/production_ip_addresses); do ssh 'ubuntu@$server' 'pkill --signal 9 -f ruby'; echo $server; done"
