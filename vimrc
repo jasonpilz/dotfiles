@@ -62,6 +62,7 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
 " Elixir support
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'slashmili/alchemist.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
