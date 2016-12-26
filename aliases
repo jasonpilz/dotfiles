@@ -29,6 +29,7 @@
 
 # Gems
   alias      fs="foreman start"
+  alias     pal="powder applog"
   alias      ra="rubocop -a"
   alias     rrr='rspec && rubocop && reek'
 
