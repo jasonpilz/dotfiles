@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# https://gist.githubusercontent.com/jasonpilz/b0e0f2c4a211220b5c575168ed08bd89/raw
+
+# This hook runs static analysis tools before each commit. If any of the steps
+# are interupted by responding with 'no' or 'n', the commit will be aborted.
+
+# Install to existing project:
+# curl -sSL https://git.io/vMt7l > .git/hooks/pre-commit; chmod +x .git/hooks/pre-commit
+
+red=$'\e[1;31m'
+cyn=$'\e[1;36m'
+
+exec < /dev/tty
+
+handle_exit () {
+  if [ $2 -gt 0 ]; then
+    echo ""
+    echo "$1 found errors in the code. Do you want to continue? ${cyn}no/n or [ENTER]${end}"
+    read input
+    if [ "$input" == "no" ] || [ "$input" == "n" ]; then
+      echo "\n${red}Commit Aborted${end}"
+      exit 1
+    fi
+  fi
+}
+
+rubocop
+handle_exit "Rubocop" $?
+
+reek
+handle_exit "Reek" $?

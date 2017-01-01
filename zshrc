@@ -111,4 +111,4 @@ function hfavpn() {
 [[ -f ~/.aliases  ]] && source ~/.aliases
 
 # for HFA cloudsearch script
-export AWS_REGION=us-east-1
+# export AWS_REGION=us-east-1
