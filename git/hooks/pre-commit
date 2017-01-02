@@ -8,15 +8,19 @@
 # Install to existing project:
 # curl -sSL https://git.io/vMt7l > .git/hooks/pre-commit; chmod +x .git/hooks/pre-commit
 
+set -e
+set -o pipefail
+
 red=$'\e[1;31m'
 cyn=$'\e[1;36m'
 
+tools=(rubocop reek)
+
 exec < /dev/tty
 
-handle_exit () {
-  if [ $2 -gt 0 ]; then
-    echo ""
-    echo "$1 found errors in the code. Do you want to continue? ${cyn}no/n or [ENTER]${end}"
+run_tool () {
+  if ! $1; then
+    echo "\n$1 found errors in the code. Do you want to continue? ${cyn}no/n or [ENTER]${end}"
     read input
     if [ "$input" == "no" ] || [ "$input" == "n" ]; then
       echo "\n${red}Commit Aborted${end}"
@@ -25,8 +29,6 @@ handle_exit () {
   fi
 }
 
-rubocop
-handle_exit "Rubocop" $?
-
-reek
-handle_exit "Reek" $?
+for tool in ${tools[@]}; do
+  run_tool $tool
+done
