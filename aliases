@@ -13,6 +13,7 @@
   alias      aa="atom ."
   alias    myip="~/scripts/ssh_me.sh"
   alias   scaps="open ~/Pictures/ScreenCapture"
+  alias    ipch="curl -sSL https://git.io/vMt7l > .git/hooks/pre-commit; chmod +x .git/hooks/pre-commit"
 
 # Rails
   alias      rr="rake routes"
@@ -23,7 +24,7 @@
 
 # Mix
   alias      mt="mix test"
-  alias    iexi="iex -S mix"
+  alias    iexs="iex -S mix"
   alias      md="mix deps"
   alias     mdg="mix deps.get"
 
@@ -44,6 +45,7 @@
   alias     gcs="git checkout staging"
   alias   gcmsg="git commit -m"
   alias    gpom="git push origin master"
+  alias     glo="git log --oneline --decorate --color"
   alias     glg="git log --oneline --abbrev-commit --all --graph --decorate --color"
 
 # MySQL
