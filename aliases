@@ -14,6 +14,7 @@
   alias    myip="~/scripts/ssh_me.sh"
   alias   scaps="open ~/Pictures/ScreenCapture"
   alias    ipch="curl -sSL https://git.io/vMt7l > .git/hooks/pre-commit; chmod +x .git/hooks/pre-commit"
+  alias     tmp="cd /var/folders/rb/1nvs9gdx2nxdw9rk5rxfxgg40000gn/T"
 
 # Rails
   alias      rr="rake routes"
@@ -58,9 +59,12 @@
 
 # Sesac
   alias  apiyolo="bundle exec rake db:drop db:create db:load db:seed"
+
   alias  solrdev="open http://10.30.3.5:8983/solr/\#/"
   alias   solrqa="open http://10.24.51.59:8983/solr/\#/"
   alias solrprod="open http://10.24.22.83:8983/solr/\#/"
+
+  alias    rmqqa="open http://10.24.54.51:15672/\#/queues/"
 
 # MM4
   # alias  killmm="for server in $(cat config/production_ip_addresses); do ssh 'ubuntu@$server' 'pkill --signal 9 -f ruby'; echo $server; done"

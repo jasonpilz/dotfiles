@@ -72,6 +72,10 @@ set encoding=utf-8
 "" Configure Plugins
 set laststatus=2                  " Always show the statusline
 
+
+"" Configure word boundary
+" set iskeyword-=_
+
 " Configure Airline
 let g:airline_enable_branch=1
 let g:airline_powerline_fonts=1   " automatic population of g:airline_symbols dictionary with powerline symbols.
@@ -114,12 +118,20 @@ map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " bind ',L' for easymotion move to line
-" Move to line
 map <Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader>L <Plug>(easymotion-overwin-line)
 
-" bind ',p' for clean pasting from clipboard
-" nmap <leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+map / <Plug>(easymotion-sn)
+map / <Plug>(easymotion-tn)
+
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+" bind ',sp' for pasting from clipboard
+nmap <leader>sp :set paste<cr>
+nmap <leader>snp :set nopaste<cr>
 
 " Bind ',ne' to toggle NERDTree
 nmap <leader>ne :NERDTreeToggle<cr>
