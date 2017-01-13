@@ -122,7 +122,7 @@ map <Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader>L <Plug>(easymotion-overwin-line)
 
 map / <Plug>(easymotion-sn)
-map / <Plug>(easymotion-tn)
+omap / <Plug>(easymotion-tn)
 
 map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
@@ -205,8 +205,8 @@ set autoindent                  " we will see
 :highlight LineNr ctermfg=grey
 :highlight LineNr ctermbg=black
 
-" Search hits
-hi Search cterm=NONE ctermfg=black ctermbg=200
+" Search hits highlighting
+hi Search cterm=NONE ctermfg=46 ctermbg=0
 
 " CSV column highlighting
 hi CSVColumnEven ctermbg=053
