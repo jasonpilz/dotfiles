@@ -1,8 +1,12 @@
 require 'json'
+require 'awesome_print'
 require 'csv'
 
+Pry.config.history.should_save = true
+Pry.config.history.should_load = true
 Pry.config.theme = 'solarized'
 Pry.config.editor = 'vim'
+Pry.history.load
 
 if defined?(PryByebug)
   Pry.commands.alias_command 'c', 'continue'

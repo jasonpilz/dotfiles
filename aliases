@@ -28,6 +28,7 @@
   alias    iexs="iex -S mix"
   alias      md="mix deps"
   alias     mdg="mix deps.get"
+  alias  exdocs="open doc/index.html"
 
 # Gems
   alias      fs="foreman start"
