@@ -15,6 +15,7 @@
   alias   scaps="open ~/Pictures/ScreenCapture"
   alias    ipch="curl -sSL https://git.io/vMt7l > .git/hooks/pre-commit; chmod +x .git/hooks/pre-commit"
   alias     tmp="cd /var/folders/rb/1nvs9gdx2nxdw9rk5rxfxgg40000gn/T"
+  alias     pms="/Applications/Plex\ Media\ Server.app/Contents/MacOS/Plex\ Media\ Scanner"
 
 # Rails
   alias      rr="rake routes"
@@ -97,9 +98,10 @@
   alias      di="docker images"
   alias     dia="docker images -a"
   alias      dv="docker volume ls"
-  alias     drm='docker rm $(docker ps -a -q)'
+  alias     drm='docker rm $(docker ps -aq)'
   alias    drmi='docker rmi $(docker images -f "dangling=true" -q)'
   alias    drmv='docker volume rm $(docker volume ls -f "dangling=true" -q)'
+  alias     dsp='docker system prune'
 
   alias      dc='docker-compose'
   alias     dcr='docker-compose run --rm'

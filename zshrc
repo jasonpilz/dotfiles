@@ -46,12 +46,12 @@ export NVM_DIR=~/.nvm
 
 path=(
   $path
-  /Users/Jason/.rvm/gems/ruby-2.3.1/bin
-  /Users/Jason/.rvm/gems/ruby-2.3.1@global/bin
-  /Users/Jason/.rvm/rubies/ruby-2.3.1/bin
-  /Users/Jason/.asdf/bin
-  /Users/Jason/.asdf/shims
-  /Users/Jason/.nvm/versions/node/v5.4.1/bin
+  /Users/"$USER"/.rvm/gems/ruby-2.3.1/bin
+  /Users/"$USER"/.rvm/gems/ruby-2.3.1@global/bin
+  /Users/"$USER"/.rvm/rubies/ruby-2.3.1/bin
+  /Users/"$USER"/.asdf/bin
+  /Users/"$USER"/.asdf/shims
+  /Users/"$USER"/.nvm/versions/node/v5.4.1/bin
   /usr/local/bin
   /usr/local/sbin
   /usr/bin
@@ -59,7 +59,7 @@ path=(
   /usr/sbin
   /sbin
   /usr/local/MacGPG2/bin
-  /Users/Jason/.rvm/bin
+  /Users/"$USER"/.rvm/bin
   /Users/"$USER"/.mix/escripts
   /Users/"$USER"/scripts
 )
@@ -93,7 +93,7 @@ function sesacvpn() {
          --user=jpilz \
          --passwd-on-stdin \
          --authgroup=EMP-Access \
-         --no-cert-check \
+         --servercert sha256:72bf0a0c904c13dff10eb595161e3179f28fc5d557cfdeab8eb6af149055af90 \
          vpn.sesac.com
 }
 
@@ -103,7 +103,6 @@ function hfavpn() {
          --user=jpilz \
          --passwd-on-stdin \
          --authgroup=HFAVPN \
-         --no-cert-check \
          vpn.harryfox.com
 }
 

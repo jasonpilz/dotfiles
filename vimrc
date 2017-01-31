@@ -344,3 +344,5 @@ nmap <leader>cc :call CursorColumnToggle()<cr>
 au BufRead,BufNewFile *.elm setfiletype haskell
 au BufRead,BufNewFile *.dump setfiletype sql
 au BufRead,BufNewFile *.conf setfiletype conf
+
+let g:ruby_path = system('rmv current')
