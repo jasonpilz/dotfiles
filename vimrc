@@ -209,8 +209,8 @@ set autoindent                  " we will see
 hi Search cterm=NONE ctermfg=46 ctermbg=0
 
 " CSV column highlighting
-hi CSVColumnEven ctermbg=053
-hi CSVColumnOdd ctermbg=018
+" hi CSVColumnEven ctermbg=053
+" hi CSVColumnOdd ctermbg=018
 
 " Change cursor shape between insert and normal mode in iTerm2.app
 if $TERM_PROGRAM =~ "iTerm"

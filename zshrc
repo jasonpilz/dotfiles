@@ -21,7 +21,7 @@ POWERLINE_DETECT_SSH="true"
 COMPLETION_WAITING_DOTS="true"
 
 # PLUGINS may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git rails ruby chucknorris zsh-autosuggestions docker)
+plugins=(git bundler osx rake rails ruby chucknorris zsh-autosuggestions docker)
 
 zle -N zle-line-init
 source $ZSH/oh-my-zsh.sh
