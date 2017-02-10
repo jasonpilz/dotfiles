@@ -67,7 +67,10 @@ module.exports = {
     bell: 'SOUND',
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: true
+    copyOnSelect: true,
+
+    // hyperterm-summon config
+    summonShortcut: 'Ctrl+Space',
 
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
@@ -85,7 +88,7 @@ module.exports = {
   // plugins: [],
   // plugins: [ 'hyper-solarized-dark', 'hyper-blink' ],
   // plugins: [ 'hyperpanic', 'hyper-blink' ],
-  plugins: [ 'hyper-materialshell', 'hyper-blink' ],
+  plugins: [ 'hyper-materialshell', 'hyper-blink', 'hyperterm-summon'],
   // plugins: [ 'hyperterm-monokai', 'hyper-blink' ],
   // plugins: [ 'hyper-blink', 'hyperblue-vibrancy', 'hyper-simple-vibrancy' ],
 

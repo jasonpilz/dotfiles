@@ -51,6 +51,7 @@ path=(
   /Users/"$USER"/.rvm/rubies/ruby-2.3.1/bin
   /Users/"$USER"/.asdf/bin
   /Users/"$USER"/.asdf/shims
+  /Users/"$USER"/.asdf/shims/elixir
   /Users/"$USER"/.nvm/versions/node/v5.4.1/bin
   /usr/local/bin
   /usr/local/sbin
