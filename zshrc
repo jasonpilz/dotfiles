@@ -86,25 +86,18 @@ function chpwd() {
     ls -lah
 }
 
-# Use openconnect to connect to the Sesac VPN
 # https://gist.github.com/moklett/3170636
-function sesacvpn() {
-    echo "$1" | \
-    sudo openconnect \
-         --user=jpilz \
-         --passwd-on-stdin \
-         --authgroup=EMP-Access \
-         --servercert sha256:72bf0a0c904c13dff10eb595161e3179f28fc5d557cfdeab8eb6af149055af90 \
-         vpn.sesac.com
-}
-
+#
 function hfavpn() {
+    host=${2:-'https://vpn.harryfox.com'}
+    group=${3:-'HFAVPN'}
+    user=${4:-'jpilz'}
     echo "$1" | \
     sudo openconnect \
-         --user=jpilz \
+         --user="$user" \
          --passwd-on-stdin \
-         --authgroup=HFAVPN \
-         vpn.harryfox.com
+         --authgroup="$group" \
+         "$host"
 }
 
 # ALIASES For a full list of active aliases, run `alias`
