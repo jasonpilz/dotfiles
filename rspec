@@ -1,4 +1,4 @@
 --color
--f d
+--format documentation
 --order random
 --require pry

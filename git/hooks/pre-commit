@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # https://gist.githubusercontent.com/jasonpilz/b0e0f2c4a211220b5c575168ed08bd89/raw
 
@@ -8,11 +8,11 @@
 # Install to existing project:
 # curl -sSL https://git.io/vMt7l > .git/hooks/pre-commit; chmod +x .git/hooks/pre-commit
 
-set -e
-set -o pipefail
+set -eo pipefail
 
-red=$'\e[1;31m'
-cyn=$'\e[1;36m'
+red=$'\e[0;31m'
+cyn=$'\e[0;36m'
+end=$'\e[0m'
 
 tools=(rubocop reek)
 
@@ -20,10 +20,10 @@ exec < /dev/tty
 
 run_tool () {
   if ! $1; then
-    echo "\n$1 found errors in the code. Do you want to continue? ${cyn}no/n or [ENTER]${end}"
+    echo "\n$1 found errors in the code. Do you want to continue? ${cyn} no/n or [ENTER]${end}"
     read input
     if [ "$input" == "no" ] || [ "$input" == "n" ]; then
-      echo "\n${red}Commit Aborted${end}"
+      echo "\n${red} Commit Aborted${end}"
       exit 1
     fi
   fi
