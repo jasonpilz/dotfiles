@@ -65,13 +65,6 @@ path=(
   /Users/"$USER"/scripts
 )
 
-# path=(
-#   $path
-#   /Users/"$USER"/.mix/escripts
-#   # /Users/"$USER"/.gem/ruby/2.3.0/bin
-#   # /Users/"$USER"/.rubies/ruby-2.3.0/lib/ruby/gems/2.3.0/bin
-#   # /Users/"$USER"/.rubies/ruby-2.3.0/bin
-# )
 export PATH
 
 # <============================ Functions ==================================> #
