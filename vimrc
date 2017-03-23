@@ -208,10 +208,6 @@ set autoindent                  " we will see
 " Search hits highlighting
 hi Search cterm=NONE ctermfg=46 ctermbg=0
 
-" CSV column highlighting
-" hi CSVColumnEven ctermbg=053
-" hi CSVColumnOdd ctermbg=018
-
 " Change cursor shape between insert and normal mode in iTerm2.app
 if $TERM_PROGRAM =~ "iTerm"
    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode

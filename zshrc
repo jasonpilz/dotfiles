@@ -63,6 +63,7 @@ path=(
   /Users/"$USER"/.rvm/bin
   /Users/"$USER"/.mix/escripts
   /Users/"$USER"/scripts
+  /Users/Jason/.asdf/installs/elixir/1.4.0/.mix/escripts
 )
 
 export PATH
