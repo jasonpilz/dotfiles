@@ -29,7 +29,11 @@
   alias    iexs="iex -S mix"
   alias      md="mix deps"
   alias     mdg="mix deps.get"
+  alias   mdgdc="mix do deps.get, deps.compile"
   alias  exdocs="open doc/index.html"
+  alias     mec="mix ecto.create"
+  alias     mpn="mix phoenix.new"
+  alias     mps="mix phoenix.server"
 
 # Gems
   alias      fs="foreman start"
