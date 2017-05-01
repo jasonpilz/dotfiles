@@ -156,11 +156,13 @@ if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
 
-  " Use ag in CtrlP for listing filees. Lightning fast and respects .gitignore
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
+
+  " ignored dirs can be added to agignore
 endif
 
 " Bind K to grep word under cursor
@@ -264,6 +266,7 @@ set updatecount=0                        " Don't try to write swapfiles after so
 set backupskip=/tmp/*,/private/tmp/*"    " can edit crontab files
 
 "" Convenience
+map <C-a> <esc>ggVG<CR>
 nmap <Leader>p orequire "pry"<CR>binding.pry<ESC>;
 vnoremap . :norm.<CR>;
 nnoremap <Leader>v :set paste<CR>"*p<CR>:set nopaste<CR>; " paste without being stupid ("*p means to paste on next line (p) from the register (") that represents the clipboard (*))
