@@ -1,7 +1,10 @@
-log
-tags
-tmp
-vendor
-.git/
-bower_components/
+/* log */
+/* tags */
+/* tmp */
+/* vendor */
+/* .git/ */
+/* bower_components/ */
+
 node_modules/
+deps/
+_build/
