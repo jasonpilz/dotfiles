@@ -101,5 +101,10 @@ function hfavpn() {
 # ALIASES For a full list of active aliases, run `alias`
 [[ -f ~/.aliases  ]] && source ~/.aliases
 
+# <============================ Exports ====================================> #
+
 # for HFA cloudsearch script
 # export AWS_REGION=us-east-1
+
+# Enable history in IEx through erlang/OTP 20
+export ERL_AFLAGS="-kernel shell_history enabled"
