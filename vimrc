@@ -52,14 +52,17 @@ Plugin 'Auto-Pairs'
 Plugin 'https://github.com/digitaltoad/vim-pug.git'
 Plugin 'rizzatti/dash.vim'
 Plugin 'ekalinin/Dockerfile.vim'
+
 " Plugins that help with ctags integration
 Plugin 'https://github.com/tpope/vim-fugitive.git'
 Plugin 'https://github.com/tpope/vim-bundler.git'
+
 " Clojure syntax highlighting, syntax
 Plugin 'tpope/vim-fireplace'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
+
 " Elixir support
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
@@ -191,6 +194,7 @@ set splitright                  " open new split panes to right
 set ruler                       " not sure but sounds cool
 set smartindent                 " does the right thing (mostly)
 set autoindent                  " we will see
+set fillchars+=vert:\           " remove the dashes in split window divider line
 
 " Load with ruler for 80 chars
 :set colorcolumn=80
@@ -206,6 +210,9 @@ set autoindent                  " we will see
 " Line numbers
 :highlight LineNr ctermfg=grey
 :highlight LineNr ctermbg=black
+
+" Blank line tilde to make invisible
+hi NonText ctermfg=235
 
 " Search hits highlighting
 hi Search cterm=NONE ctermfg=46 ctermbg=0

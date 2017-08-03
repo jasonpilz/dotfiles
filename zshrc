@@ -64,6 +64,7 @@ path=(
   /Users/"$USER"/.mix/escripts
   /Users/"$USER"/scripts
   /Users/Jason/.asdf/installs/elixir/1.4.0/.mix/escripts
+  /Users/Jason/.ngrok
 )
 
 export PATH
@@ -75,13 +76,16 @@ function jcurl() {
     curl "$@" | json | pygmentize -l json
 }
 
+function pbcurl() {
+    curl "$@" | json | pbcopy
+}
+
 # List folder contents after cd
 function chpwd() {
     ls -lah
 }
 
 # https://gist.github.com/moklett/3170636
-#
 function hfavpn() {
     host=${2:-'https://vpn.harryfox.com'}
     group=${3:-'HFAVPN'}
