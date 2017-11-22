@@ -21,7 +21,19 @@ POWERLINE_DETECT_SSH="true"
 COMPLETION_WAITING_DOTS="true"
 
 # PLUGINS may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git bundler osx rake rails ruby chucknorris zsh-autosuggestions docker)
+plugins=(
+  chucknorris
+  git
+  brew
+  bundler
+  docker
+  docker-compose
+  osx
+  rake
+  rails
+  ruby
+  zsh-autosuggestions
+)
 
 zle -N zle-line-init
 source $ZSH/oh-my-zsh.sh
@@ -108,3 +120,5 @@ function hfavpn() {
 
 # Enable history in IEx through erlang/OTP 20
 export ERL_AFLAGS="-kernel shell_history enabled"
+# Adjust tensorflow log level
+export TF_CPP_MIN_LOG_LEVEL=2
