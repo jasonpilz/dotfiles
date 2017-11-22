@@ -67,6 +67,9 @@ Plugin 'guns/vim-clojure-highlight'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
 
+" Color Schemes
+Plugin 'whatyouhide/vim-gotham'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -86,8 +89,8 @@ let g:airline_detect_modified=1   " marks when the file has changed
 let g:airline_detect_paste=1      " enable paste detection (set paste) ie I'm not typing, I'm pasting
 let g:airline_detect_iminsert=0   " I have no idea
 let g:airline_inactive_collapse=1 " inactive windows should have the left section collapsed to only the filename of that buffer.
-let g:airline_solarized_bg='dark' " Use Solarized Dark theme
-let g:airline_theme='dark'        " Dark airline theme
+" let g:airline_solarized_bg='dark' " Use Solarized Dark theme
+" let g:airline_theme='dark'        " Dark airline theme
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
@@ -180,7 +183,6 @@ let g:jsx_ext_required = 0      " Allow JSX in normal JS files
 
 "" Basic editor behaviour
 filetype plugin indent on       " load file type plugins + indentation
-set t_Co=256                    " Explicitly tell vim that the terminal supports 256 colors
 syntax enable                   " highlighting
 set cursorcolumn                " colours the column the cursor is on
 set cursorline                  " colours the line the cursor is on
@@ -195,24 +197,27 @@ set ruler                       " not sure but sounds cool
 set smartindent                 " does the right thing (mostly)
 set autoindent                  " we will see
 set fillchars+=vert:\           " remove the dashes in split window divider line
+set re=1                        " for vim > 7.3 make vim use older regex engine to prevent massive lag"
+
+"" Appearance
+colorscheme gotham
 
 " Load with ruler for 80 chars
 :set colorcolumn=80
 " :highlight colorcolumn ctermbg=160
-:highlight colorcolumn ctermbg=black
-
-:highlight cursorcolumn ctermbg=black
-:highlight cursorline cterm=NONE ctermbg=black
+" :highlight cursorcolumn ctermbg=green
+" :highlight cursorline cterm=NONE ctermbg=green
 
 " In Visual mode, customize the highlight background color
-:highlight Visual cterm=NONE ctermbg=016
+" :highlight Visual cterm=NONE ctermbg=016
 
 " Line numbers
-:highlight LineNr ctermfg=grey
-:highlight LineNr ctermbg=black
+" :highlight LineNr ctermfg=grey
+" :highlight LineNr ctermbg=black
 
 " Blank line tilde to make invisible
-hi NonText ctermfg=235
+" hi NonText ctermfg=235
+hi NonText ctermfg=black
 
 " Search hits highlighting
 hi Search cterm=NONE ctermfg=46 ctermbg=0
@@ -274,7 +279,7 @@ set backupskip=/tmp/*,/private/tmp/*"    " can edit crontab files
 
 "" Convenience
 map <C-a> <esc>ggVG<CR>
-nmap <Leader>p orequire "pry"<CR>binding.pry<ESC>;
+nmap <Leader>p orequire "pry"; binding.pry;
 vnoremap . :norm.<CR>;
 nnoremap <Leader>v :set paste<CR>"*p<CR>:set nopaste<CR>; " paste without being stupid ("*p means to paste on next line (p) from the register (") that represents the clipboard (*))
 
@@ -287,6 +292,9 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+"" swapping words
+nnoremap <Leader>sf "xdiwdwep"xpbb
 
 "" Emacs/Readline keybindings for commandline mode
 "  http://tiswww.case.edu/php/chet/readline/readline.html#SEC4
@@ -314,6 +322,7 @@ if has("gui_running")
   :set colorcolumn=80
 
   " Solarized theme config
+  " let g:solarized_termcolors=256
   set background=dark
   let g:solarized_contrast = "high"
   colorscheme solarized
