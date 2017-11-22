@@ -26,6 +26,12 @@
 
 # Mix
   alias      mt="mix test"
+  alias     mtt="mix test --trace"
+  alias    mtns="mix test --no-start"
+  alias      mc="mix credo"
+  alias     mcs="mix credo --strict"
+  alias     mch="mix coveralls.html && open cover/excoveralls.html"
+  alias    imtt="iex -S mix test --trace"
   alias    iexs="iex -S mix"
   alias      md="mix deps"
   alias     mdg="mix deps.get"
@@ -46,6 +52,8 @@
   alias    berr="bundle exec rspec && rubocop"
 
 # Git
+  alias  pushor="git push origin HEAD"
+  alias  pushse="git push sesac HEAD"
   alias      co="git checkout"
   alias     com="git checkout master"
   alias      gs="git status"
@@ -64,18 +72,8 @@
   alias voltage="particle variable get sephiroth voltage"
 
 # Sesac
-  alias  apiyolo="bundle exec rake db:drop db:create db:load db:seed"
-
-  alias  solrdev="open http://10.30.3.5:8983/solr/\#/"
-  alias   solrqa="open http://10.24.51.59:8983/solr/\#/"
-  alias solrprod="open http://10.24.22.83:8983/solr/\#/"
-
-  alias    rmqqa="open http://10.24.54.51:15672/\#/queues/"
-
-# MM4
-  # alias  killmm="for server in $(cat config/production_ip_addresses); do ssh 'ubuntu@$server' 'pkill --signal 9 -f ruby'; echo $server; done"
-  alias cpstartw="cap production start_workers"
-  alias  cpstopw="cap production stop_workers"
+  alias   apiyolo="bundle exec rake db:drop db:create db:load db:seed"
+  alias provision="curl https://gist.githubusercontent.com/jasonpilz/---- | pbcopy"
 
 # Hub
   alias      hb="hub browse"
@@ -97,26 +95,33 @@
 # Kafka
   alias kafka-server="zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties; kafka-server-start /usr/local/etc/kafka/server.properties"
 
+# Bamboo - Sesac
+  bamboo_build() { open $(cat .bamboo.json | jq '.Build' | sed 's/\"//g'); }
+  bamboo_deploy() { open $(cat .bamboo.json | jq '.Deploy' | sed 's/\"//g'); }
+
+  alias      bb=bamboo_build
+  alias      bd=bamboo_deploy
+
 # Docker
-  alias     dlc="docker ps -lq"
-  alias      dp="docker ps"
-  alias     dpa="docker ps -a"
+  alias     dps="docker ps -a"
   alias      di="docker images"
+  alias      dl='docker ps -lq' # Get ID of last run container
   alias     dia="docker images -a"
   alias      dv="docker volume ls"
   alias     drm='docker rm $(docker ps -aq)'
   alias    drmi='docker rmi $(docker images -f "dangling=true" -q)'
   alias    drmv='docker volume rm $(docker volume ls -f "dangling=true" -q)'
   alias     dsp='docker system prune'
+  alias    dspf='docker system prune -f'
 
   alias      dc='docker-compose'
   alias     dcr='docker-compose run --rm'
   alias     dce='docker-compose exec'
   alias     dce='docker-compose build --force-rm --pull'
-  alias     dcu='docker-compose up -d --remove-orphans'
+  alias     dcu='docker-compose up --remove-orphans'
+  alias    dcud='docker-compose up -d --remove-orphans'
   alias     dcd='docker-compose down --remove-orphans'
-  alias     dcp='docker-compose ps'
+  alias    dcps='docker-compose ps -a'
   alias     dcs='docker-compose start'
   alias    dcst='docker-compose stop'
   alias     dcl='docker-compose logs -f'
-  alias    dcla='docker-compose logs -f --tail="all"'
