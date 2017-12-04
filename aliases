@@ -119,9 +119,16 @@
   alias     dce='docker-compose exec'
   alias     dce='docker-compose build --force-rm --pull'
   alias     dcu='docker-compose up --remove-orphans'
+  alias    deit='docker exec -it $(dl)'
   alias    dcud='docker-compose up -d --remove-orphans'
   alias     dcd='docker-compose down --remove-orphans'
   alias    dcps='docker-compose ps -a'
   alias     dcs='docker-compose start'
   alias    dcst='docker-compose stop'
   alias     dcl='docker-compose logs -f'
+
+# Terraform
+  alias      ti='terraform init'
+  alias      tp='terraform plan'
+  alias      ts='terraform show'
+  alias      ta='terraform apply'

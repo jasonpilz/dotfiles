@@ -51,7 +51,10 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'Auto-Pairs'
 Plugin 'https://github.com/digitaltoad/vim-pug.git'
 Plugin 'rizzatti/dash.vim'
+
+" DevOps
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'https://github.com/hashivim/vim-terraform.git'
 
 " Plugins that help with ctags integration
 Plugin 'https://github.com/tpope/vim-fugitive.git'
