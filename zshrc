@@ -76,6 +76,7 @@ path=(
   /Users/"$USER"/.mix/escripts
   /Users/"$USER"/scripts
   /Users/Jason/.asdf/installs/elixir/1.4.0/.mix/escripts
+  /Users/Jason/.asdf/installs/elixir/1.5.0/.mix/escripts
   /Users/Jason/.ngrok
 )
 
@@ -120,5 +121,6 @@ function hfavpn() {
 
 # Enable history in IEx through erlang/OTP 20
 export ERL_AFLAGS="-kernel shell_history enabled"
+
 # Adjust tensorflow log level
 export TF_CPP_MIN_LOG_LEVEL=2
