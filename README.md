@@ -2,4 +2,6 @@
 
 My personal dotfiles / Unix configurations.
 
-<img src="assets/gotham.png" align="center" width="700px" />
+<p align="center">
+  <img src="assets/gotham.png" width="700px" />
+</p>
