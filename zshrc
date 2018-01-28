@@ -75,9 +75,10 @@ path=(
   /Users/"$USER"/.rvm/bin
   /Users/"$USER"/.mix/escripts
   /Users/"$USER"/scripts
-  /Users/Jason/.asdf/installs/elixir/1.4.0/.mix/escripts
-  /Users/Jason/.asdf/installs/elixir/1.5.0/.mix/escripts
-  /Users/Jason/.ngrok
+  /Users/"$USER"/.asdf/installs/elixir/1.4.0/.mix/escripts
+  /Users/"$USER"/.asdf/installs/elixir/1.5.0/.mix/escripts
+  /Users/"$USER"/.ngrok
+  /Users/"$USER"/go/bin
 )
 
 export PATH
@@ -123,7 +124,7 @@ function hfavpn() {
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # https://github.com/golang/go/wiki/SettingGOPATH
-export GOPATH=$HOME/code/go
+export GOPATH=$HOME/go
 
 # Adjust tensorflow log level
 export TF_CPP_MIN_LOG_LEVEL=2
