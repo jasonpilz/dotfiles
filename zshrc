@@ -122,5 +122,8 @@ function hfavpn() {
 # Enable history in IEx through erlang/OTP 20
 export ERL_AFLAGS="-kernel shell_history enabled"
 
+# https://github.com/golang/go/wiki/SettingGOPATH
+export GOPATH=$HOME/code/go
+
 # Adjust tensorflow log level
 export TF_CPP_MIN_LOG_LEVEL=2
