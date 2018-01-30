@@ -1,5 +1,4 @@
 # <=============================== Zsh =====================================> #
-
 # Path to your oh-my-zsh installation
 export ZSH=/Users/"$USER"/.oh-my-zsh
 
@@ -39,7 +38,6 @@ zle -N zle-line-init
 source $ZSH/oh-my-zsh.sh
 
 # <=========================== Integrations ================================> #
-
 # iTerm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -54,8 +52,18 @@ export NVM_DIR=~/.nvm
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-# <=============================== PATH ====================================> #
+# <=============================== LANGS ===================================> #
+# https://github.com/golang/go/wiki/SettingGOPATH
+export GOPATH=$HOME/go
 
+# Enable history in IEx through erlang/OTP 20
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+
+# Adjust tensorflow log level
+export TF_CPP_MIN_LOG_LEVEL=2
+
+# <=============================== PATH ====================================> #
 path=(
   $path
   /Users/"$USER"/.rvm/gems/ruby-2.3.1/bin
@@ -78,13 +86,12 @@ path=(
   /Users/"$USER"/.asdf/installs/elixir/1.4.0/.mix/escripts
   /Users/"$USER"/.asdf/installs/elixir/1.5.0/.mix/escripts
   /Users/"$USER"/.ngrok
-  /Users/"$USER"/go/bin
+  $(go env GOPATH)/bin
 )
 
 export PATH
 
 # <============================ Functions ==================================> #
-
 # pretty print and colorize curl request
 function jcurl() {
     curl "$@" | json | pygmentize -l json
@@ -116,15 +123,5 @@ function hfavpn() {
 [[ -f ~/.aliases  ]] && source ~/.aliases
 
 # <============================ Exports ====================================> #
-
 # for HFA cloudsearch script
 # export AWS_REGION=us-east-1
-
-# Enable history in IEx through erlang/OTP 20
-export ERL_AFLAGS="-kernel shell_history enabled"
-
-# https://github.com/golang/go/wiki/SettingGOPATH
-export GOPATH=$HOME/go
-
-# Adjust tensorflow log level
-export TF_CPP_MIN_LOG_LEVEL=2
