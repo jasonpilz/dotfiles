@@ -202,6 +202,9 @@ set autoindent                  " we will see
 set fillchars+=vert:\           " remove the dashes in split window divider line
 set re=1                        " for vim > 7.3 make vim use older regex engine to prevent massive lag"
 
+"" Golang - set tab width to 4 spaces
+autocmd Filetype go setlocal tabstop=4
+
 "" Appearance
 colorscheme gotham
 
