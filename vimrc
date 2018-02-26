@@ -70,6 +70,9 @@ Plugin 'guns/vim-clojure-highlight'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
 
+" Swift support
+Plugin 'keith/swift.vim'
+
 " Color Schemes
 Plugin 'whatyouhide/vim-gotham'
 
