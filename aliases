@@ -125,7 +125,7 @@
   alias    deit='docker exec -it $(dl)'
   alias    dcud='docker-compose up -d --remove-orphans'
   alias     dcd='docker-compose down --remove-orphans'
-  alias    dcps='docker-compose ps -a'
+  alias    dcps='docker-compose ps'
   alias     dcs='docker-compose start'
   alias    dcst='docker-compose stop'
   alias     dcl='docker-compose logs -f'
