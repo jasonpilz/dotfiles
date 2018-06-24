@@ -87,6 +87,7 @@ path=(
   /Users/"$USER"/.asdf/installs/elixir/1.5.0/.mix/escripts
   /Users/"$USER"/.ngrok
   $(go env GOPATH)/bin
+  /Users/"$USER"/anaconda3/bin
 )
 
 export PATH

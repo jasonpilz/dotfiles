@@ -119,6 +119,8 @@
 
   alias      dc='docker-compose'
   alias     dcr='docker-compose run --rm'
+  alias  dcapir='docker-compose run --rm api rspec'
+  alias  dcappr='docker-compose run --rm app rspec'
   alias     dce='docker-compose exec'
   alias     dce='docker-compose build --force-rm --pull'
   alias     dcu='docker-compose up --remove-orphans'
