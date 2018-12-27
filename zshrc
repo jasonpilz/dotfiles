@@ -7,32 +7,55 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 
 # THEMES ~/.oh-my-zsh/themes/
-ZSH_THEME="agnoster"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="agnoster"
 # ZSH_THEME="powerline"
 # ZSH_THEME="robbyrussell"
 
 # Hide $USER@$HOSTNAME prefix unless in ssh session
 [[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER=$USER
 
-# POWERLINE
-POWERLINE_RIGHT_A="exit-status"
-POWERLINE_DETECT_SSH="true"
+
 COMPLETION_WAITING_DOTS="true"
 
 # PLUGINS may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
+  aws
+  asdf
   chucknorris
   git
+  golang
   brew
   bundler
   docker
   docker-compose
+  mix
   osx
   rake
   rails
   ruby
+  terraform
+  web-search
   zsh-autosuggestions
 )
+
+# powerline-go
+function powerline_precmd() {
+    PS1="$(~/go/bin/powerline-go -error $? -shell zsh -modules venv,aws,user,cwd,perms,ssh,git,dotenv,jobs,exit,terraform-workspace -path-aliases \~/code/sesac=@SESAC,\~/go/src/github.com=@GO -numeric-exit-codes)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
 
 zle -N zle-line-init
 source $ZSH/oh-my-zsh.sh
@@ -126,3 +149,4 @@ function hfavpn() {
 # <============================ Exports ====================================> #
 # for HFA cloudsearch script
 # export AWS_REGION=us-east-1
+export AWS_PROFILE=hfa
