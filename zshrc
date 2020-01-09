@@ -41,7 +41,7 @@ plugins=(
 
 # powerline-go
 function powerline_precmd() {
-    PS1="$(~/go/bin/powerline-go -error $? -shell zsh -modules venv,aws,user,cwd,perms,ssh,git,dotenv,jobs,exit,terraform-workspace -path-aliases \~/code/sesac=@SESAC,\~/go/src/github.com=@GO -numeric-exit-codes)"
+    PS1="$(~/go/bin/powerline-go -error $? -shell zsh -modules venv,user,cwd,perms,ssh,dotenv,git,jobs,exit,terraform-workspace -path-aliases \~/code/sesac=@SESAC,\~/code/advicsol=@ADVICSOL,\~/go/src/github.com/sesac=@GO-SESAC -numeric-exit-codes)"
 }
 
 function install_powerline_precmd() {
@@ -118,7 +118,7 @@ export PATH
 # <============================ Functions ==================================> #
 # pretty print and colorize curl request
 function jcurl() {
-    curl "$@" | json | pygmentize -l json
+    curl "$@" | jq . | pygmentize -l json
 }
 
 function pbcurl() {
@@ -132,7 +132,7 @@ function chpwd() {
 
 # https://gist.github.com/moklett/3170636
 function hfavpn() {
-    host=${2:-'https://vpn.harryfox.com'}
+    host=${2:-'https://vpn2.harryfox.com'}
     group=${3:-'HFAVPN'}
     user=${4:-'jpilz'}
     echo "$1" | \
