@@ -41,7 +41,16 @@ plugins=(
 
 # powerline-go
 function powerline_precmd() {
-    PS1="$(~/go/bin/powerline-go -error $? -shell zsh -modules venv,user,cwd,perms,ssh,dotenv,git,jobs,exit,terraform-workspace -path-aliases \~/code/sesac=@SESAC,\~/code/advicsol=@ADVICSOL,\~/go/src/github.com/sesac=@GO-SESAC -numeric-exit-codes)"
+    eval "$(
+      ~/go/bin/powerline-go \
+      -error $? \
+      -shell zsh \
+      -modules venv,user,cwd,perms,ssh,dotenv,git,jobs,exit,terraform-workspace \
+      -eval \
+      -modules-right docker,aws \
+      -path-aliases \~/code/sesac=@SESAC,\~/go/src/github.com/sesac=@GO-SESAC \
+      -numeric-exit-codes \
+    )"
 }
 
 function install_powerline_precmd() {
