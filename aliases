@@ -1,5 +1,5 @@
 # Unix
-  alias     vim="/usr/local/Cellar/vim/8.1.2350/bin/vim"
+  alias     vim="/usr/local/bin/vi"
   alias      ll="ls -lah"
   alias      ..="cd .."
   alias     ...="cd ../.."
@@ -11,6 +11,7 @@
   alias      zc="vim ~/.zshrc"
   alias      vc="vim ~/.vimrc"
   alias      ac="vim ~/.aliases"
+  alias    awsc="vim ~/.aws/credentials"
   alias      aa="atom ."
   alias    myip="~/scripts/ssh_me.sh"
   alias   scaps="open ~/Pictures/ScreenCapture"
