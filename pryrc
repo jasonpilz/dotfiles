@@ -1,5 +1,6 @@
 require 'json'
 require 'csv'
+require 'awesome_print'
 
 Pry.config.history.should_save = true
 Pry.config.history.should_load = true
