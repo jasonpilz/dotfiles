@@ -32,7 +32,6 @@ plugins=(
   mix
   osx
   rake
-  rails
   ruby
   terraform
   web-search
@@ -48,7 +47,7 @@ function powerline_precmd() {
       -modules venv,user,cwd,perms,ssh,dotenv,git,jobs,exit,terraform-workspace \
       -eval \
       -modules-right docker,aws \
-      -path-aliases \~/code/sesac=@SESAC,\~/go/src/github.com/sesac=@GO-SESAC \
+      -path-aliases \~/code/drizly=@DRIZLY \
       -numeric-exit-codes \
     )"
 }
@@ -140,8 +139,8 @@ function chpwd() {
 }
 
 # https://gist.github.com/moklett/3170636
-function hfavpn() {
-    host=${2:-'https://vpn2.harryfox.com'}
+function sesacvpn() {
+    host=${2:-'https://vpn.sesac.com'}
     group=${3:-'HFAVPN'}
     user=${4:-'jpilz'}
     echo "$1" | \
@@ -156,6 +155,6 @@ function hfavpn() {
 [[ -f ~/.aliases  ]] && source ~/.aliases
 
 # <============================ Exports ====================================> #
-# for HFA cloudsearch script
 # export AWS_REGION=us-east-1
-export AWS_PROFILE=hfa
+# export AWS_PROFILE=hfa
+# export GOPRIVATE=github.com/sesac
