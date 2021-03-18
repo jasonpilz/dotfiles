@@ -1,18 +1,31 @@
 [user]
 	name = Jason Pilz
 	email = jasonpilz@gmail.com
-[credential]
-	helper = osxkeychain
+
+[credential "https://github.com"]
+  helper = osxkeychain
+
+[credential "https://git-codecommit.us-east-1.amazonaws.com"]
+  helper =
+  helper = !aws2 --profile mlc-ss-ptl codecommit credential-helper $@
+  UseHttpPath = true
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	required = true
 	process = git-lfs filter-process
+
 [push]
 	default = simple
+
 [alias]
 	dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy | less --tabs=4 -RFX; }; f"
+
 [core]
 	excludesfile = /Users/j7z/.global_ignore
+
 [url "git@github.sesac.com:"]
 	insteadOf = https://github.sesac.com/
+[pull]
+	rebase = false
