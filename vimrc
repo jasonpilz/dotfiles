@@ -98,7 +98,7 @@ let g:airline_inactive_collapse=1 " inactive windows should have the left sectio
 " let g:airline_solarized_bg='dark' " Use Solarized Dark theme
 " let g:airline_theme='dark'        " Dark airline theme
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",

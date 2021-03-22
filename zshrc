@@ -1,6 +1,7 @@
 # <=============================== Zsh =====================================> #
 # Path to your oh-my-zsh installation
 export ZSH=/Users/"$USER"/.oh-my-zsh
+export ZSH_DISABLE_COMPFIX=true
 
 # zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
