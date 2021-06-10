@@ -27,5 +27,9 @@
 
 [url "git@github.sesac.com:"]
 	insteadOf = https://github.sesac.com/
+
 [pull]
 	rebase = false
+
+[init]
+	defaultBranch = main

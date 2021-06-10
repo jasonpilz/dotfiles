@@ -289,6 +289,7 @@ set backupskip=/tmp/*,/private/tmp/*"    " can edit crontab files
 "" Convenience
 map <C-a> <esc>ggVG<CR>
 nmap <Leader>p orequire "pry"; binding.pry;
+nmap <Leader>f i# frozen_string_literal: true
 vnoremap . :norm.<CR>;
 nnoremap <Leader>v :set paste<CR>"*p<CR>:set nopaste<CR>; " paste without being stupid ("*p means to paste on next line (p) from the register (") that represents the clipboard (*))
 
