@@ -7,15 +7,8 @@ export ZSH_DISABLE_COMPFIX=true
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 
-# THEMES ~/.oh-my-zsh/themes/
-# ZSH_THEME="powerlevel9k/powerlevel9k"
-# ZSH_THEME="agnoster"
-# ZSH_THEME="powerline"
-# ZSH_THEME="robbyrussell"
-
 # Hide $USER@$HOSTNAME prefix unless in ssh session
 [[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER=$USER
-
 
 COMPLETION_WAITING_DOTS="true"
 
@@ -48,7 +41,7 @@ function powerline_precmd() {
       -modules venv,user,cwd,perms,ssh,dotenv,git,jobs,exit,terraform-workspace \
       -eval \
       -modules-right docker,aws \
-      -path-aliases \~/code/drizly=@DRIZLY \
+      -path-aliases \~/code=@CODE \
       -numeric-exit-codes \
     )"
 }
@@ -84,7 +77,7 @@ export NVM_DIR=~/.nvm
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-# <=============================== LANGS ===================================> #
+# <=============================== Langs ===================================> #
 # https://github.com/golang/go/wiki/SettingGOPATH
 export GOPATH=$HOME/go
 
@@ -139,6 +132,25 @@ function chpwd() {
     ls -lah
 }
 
+# Login to AWS ECR
+function ecr-login {
+  local REGION=$(aws configure get region)
+  local ID=$(aws sts get-caller-identity --query Account --output text)
+
+  printf "Logging in to ECR... "
+
+  if curl --connect-timeout 2 -o /dev/null -s https://ecr.${REGION}.amazonaws.com/; then
+    aws ecr get-login-password | docker login --username AWS --password-stdin ${ID}.dkr.ecr.${REGION}.amazonaws.com
+  else
+    echo "Unable to establish contact with amazonaws.com, continuing unauthenticated"
+  fi
+}
+
+# <============================ Aliases ====================================> #
+# For a full list of active aliases, run `alias`
+[[ -f ~/.aliases  ]] && source ~/.aliases
+
+# <============================ Sesac ======================================> #
 # https://gist.github.com/moklett/3170636
 function sesacvpn() {
     host=${2:-'https://vpn.sesac.com'}
@@ -152,10 +164,6 @@ function sesacvpn() {
          "$host"
 }
 
-# ALIASES For a full list of active aliases, run `alias`
-[[ -f ~/.aliases  ]] && source ~/.aliases
-
 # <============================ Exports ====================================> #
-# export AWS_REGION=us-east-1
-# export AWS_PROFILE=hfa
-# export GOPRIVATE=github.com/sesac
+export AWS_PROFILE=
+export GOPRIVATE=github.com/jasonpilz
